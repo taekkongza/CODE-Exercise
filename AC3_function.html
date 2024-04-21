@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert</title>
+
+  <link rel="stylesheet" href="AC3_function.css">
+</head>
+<body>
+  
+  <!-- UI 만드는 법 -->
+  <!-- 1. 미리 디자인해 놓고 숨김 -->
+  <!-- 2. 버튼 누르거나 하면 보여줌 -->
+  <!-- CSS로 들어가려면 .style  -->
+  
+
+  <!-- Function을 사용하는 이유 -->
+  <!-- 긴 코드를 깔끔하게 한단어로 축약 가능 -->
+
+  <!-- 코딩하는 것 ::: 긴코드를 짧게 또는 한단어로 축약 -->
+
+
+  <!-- 버그란??  -->
+  <!-- 내가 코드를 짲는데 작동을 안하는것 -->
+
+  <!-- <script>
+    document.getElementById('alert').innerHTML = '??';
+  </script> -->
+
+  <!-- 에러 메세지 -->
+  <!-- AC3_function.html:27 Uncaught TypeError: Cannot set properties of null (setting 'innerHTML')
+    at AC3_function.html:27:48 -->
+  <!-- innerHTML의 왼쪽이 에러다~~~~~ -->
+
+
+  <div class="alert-box" id="alert">
+    <p>Alert 박스</p>
+    <button onclick="알림창닫기()">닫기</button>
+  </div>
+
+  <button onclick="알림창열기()">버튼</button>
+
+  <script>
+
+    // 버그
+    // 변경할 HTML요소는 위에
+    // JS 조작은 밑에서 (정석)
+    // 위에서 하면 에러남
+    // 이유 : HTML을 먼저 읽어야 JS로 조작 가능함
+
+    function 알림창열기(){
+      document.getElementById('alert').style.display = 'block'
+    }
+    /*
+    function을 쓰면 긴 코드를 깔끔하게 한단어로 축약가능
+
+    function 아무렇게나작명(){
+
+      긴코드~~~
+      긴코드~~~~~
+
+    }
+
+    아무렇게나작명()
+    */
+
+    function 알림창닫기(){
+      document.getElementById('alert').style.display = 'none'
+    }
+
+  </script>
+
+
+</body>
+</html>
