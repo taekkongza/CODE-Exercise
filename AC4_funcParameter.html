@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alert</title>
 
-  <link rel="stylesheet" href="AC3_function.css">
+  <link rel="stylesheet" href="AC4_funcParameter.css">
 </head>
 <body>
 
@@ -13,23 +13,48 @@
 
   <div class="alert-box" id="alert">
     <p>Alert 박스</p>
-    <button onclick="알림창닫기()">닫기</button>
+    <button onclick="알림창열기('none')">닫기</button>
   </div>
 
-  <button onclick="알림창열기()">버튼</button>
+  <button onclick="알림창열기('block')">버튼</button>
 
   <script>
 
-
-
-    function 알림창열기(){
-      document.getElementById('alert').style.display = 'block'
+    function 알림창열기(구멍){
+      document.getElementById('alert').style.display = 구멍;
     }
 
+    // 알림창열기(123);   <-- 알림창열기() 실행하는데.. 구멍에 123 넣어서 실행
+    // 알림창열기('안녕'); <-- 알림창열기() 실행하는데 구멍에 '안녕' 넣어서 실행
+    // 알림창열기('block');
+    // 알림창열기('none');
+    // 파라미터를 만들면 여러개의 함수를 만들 필요가 없다.
 
-    function 알림창닫기(){
-      document.getElementById('alert').style.display = 'none'
-    }
+
+    // function 알림창닫기(){
+    //   document.getElementById('alert').style.display = 'none'
+    // }
+
+
+    // 다른 예시
+    // function plus(구멍){
+    //   2 + 구멍
+    // }
+
+    // plus(1);
+    // plus(2);
+    // plus(3);
+
+    // ##### 파라미터의 장점: 함수 하나로 다양한 기능 실행 가능
+
+
+    // 편하지만 쓰기 싫으면 안써도 된다.
+    // 파라미터 없어도 모든 개발 가능함.
+    
+
+    // 알림창열기('ooo','oooo')
+
+
 
   </script>
 

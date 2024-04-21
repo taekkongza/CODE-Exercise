@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert</title>
+
+  <link rel="stylesheet" href="AC5_eventListener.css">
+</head>
+<body>
+
+
+<!--
+  <div class="alert-box" id="alert">
+    <p id="title">Alert box</p>
+    <button onclick="document.getElementById('alert').style.display = 'none'"> X </button>
+  </div>
+-->
+  <!-- <button onclick="알림창1열기()">버튼1</button>
+  <button onclick="알림창2열기()">버튼2</button> -->
+<!--
+  <button onclick="알림창열기('아이디입력해라')">버튼1</button>
+  <button onclick="알림창열기('비번입력해라')">버튼1</button>
+
+  <script>
+
+    // function 알림창1열기(){
+    //   // 1. 제목 바꾸기
+    //   // document.getElementsByClassName('alert-box')[0]
+    //   // class명이 alert-box인 것 전부 찾아라 [2] 찾는것중 3번째것 
+  
+    //   // 2. 열기
+
+    //   document.getElementById('title').innerHTML = '아이디입력하세요';
+    //   document.getElementById('alert').style.display = 'block';
+    // }
+    
+    // function 알림창2열기(){
+
+    //   document.getElementById('title').innerHTML = '비번입력하세요';
+    //   document.getElementById('alert').style.display = 'block';
+    // }
+
+    function 알림창열기(구멍){
+      document.getElementById('title').innerHTML = 구멍;
+      document.getElementById('alert').style.display = 'block';
+    }
+
+  </script>
+-->
+
+
+  <div class="alert-box" id="alert">
+    <p id="title">Alert Box</p>
+    <button id="close">X</button>
+  </div>
+
+  <button onclick="알림창열기('아이디입력해라')">버튼1</button>
+  <button onclick="알림창열기('비번입력해라')">버튼2</button>
+
+  <script>
+    //                                                 event : click, keydown, scroll, mouseover
+    document.getElementById('close').addEventListener('click', function(){
+    //                       이 요소가                  클릭되면   함수, 코드를 실행해주세요     
+      document.getElementById('alert').style.display = 'none';
+    });
+
+    function 알림창열기(구멍){
+      document.getElementById('title').innerHTML = 구멍;
+      document.getElementById('alert').style.display = 'block';
+    }
+
+  </script>
+
+
+</body>
+</html>
