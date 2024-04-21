@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Javascript 목적 : HTML 조작과 변경 -->
+  <h2 id="hello">안녕하세요</h2>
+  <h2 id="hi">올때 메로나</h2>
+
+
+  <script>
+
+  document.getElementById('hello').innerHTML = '안녕';
+  // document.getElementById(???).??? = '안녕';
+
+  // selector => document.getElementById()
+  
+  //             document.getElementById(???).??? -- ???은 구글 검색
+  document.getElementById('hello').style.color = 'red'; 
+  document.getElementById('hi').innerHTML = '올때 바밤바';
+  // = : 대입 : 오른쪽걸 왼쪽에 집어넣어주세요 즉, <<== 와 같다고 생각하세요
+  // ' ', " "는 모두 문자이다.
+    
+  document.getElementById('hi').style.fontSize = '30px';
+
+
+</script>
+
+
+  
+</body>
+
+</html>
