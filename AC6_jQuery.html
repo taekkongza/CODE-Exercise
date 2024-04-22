@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1 id="test" class="test1">안녕하세요</h1>
+  
+  <!-- jQuery와 javscript는 같은것이다. 다만 축약형, 코드를 적게 써도 된다. -->
+
+  
+  <div class="yellow" style ="background-color:yellow; color : yellow">yellow</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+
+  // document.getElementById('test').innerHTML = '???'
+  // = $(#test)
+
+  // $(.test1)
+
+  // = document.querySelector('#test')
+  // = document.querySelectorAll('#test')[0]
+
+  // jQuery로 HTML 변경하는 법 
+  // $('CSS셀렉터').어쩌구();
+
+  // $('#test').html('안녕');  // #test 안에 있는 모든 HTML
+  // $('#test').text('안녕');     // #test 안에 있는 모든 글자
+  
+  // jQuery로 HTML출력 보려면, 그냥 괄호안에 뭐 쓰지 말아보셈
+  $('#test').html();
+
+  // jQuery로 HTML 스타일 변경은
+  // $('CSS셀렉터').css('이걸','이렇게');
+  $('#test').css('color','red');
+  
+  // jQuery로 HTML 다른거 변경하려면
+  // $('CSS셀렉터').attr('이걸','이렇게');
+  $('#test').attr('src', 'dfasd.jpg');
+
+
+  $('.yellow').css('background-color','blue');
+
+ 
+
+</script>  
+
+<!-- jQuery 설치
+1. jQuery 파일을 받아서 첨부만 할것임
+- 구글에서 jquery어쩌구.js 다운받아서
+- <script src="그js파일경로"></script>
+
+2. CDN으로 설치 - 구글에 jQuery cdn 검색
+   minified
+  
+head에 설치해도 되나 속도 문제로 jQuery는 
+body 제일 밑에 <script> 직전에 설치하는게 중요하다  -->
+
+
+</body>
+</html>
