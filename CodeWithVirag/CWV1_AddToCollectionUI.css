@@ -144,12 +144,12 @@ button.save:hover {
   transform: scale(1.1);
 }
 
-.icon-tabler-check{
+.icon-tabler-check {
   border-radius: 50%;
-  border: 5px solid #bdbdfa;
+  border: 5px solid #bdbdfa73;
   background: #000;
-  padding: 0.25rem;
-
+  padding: 0.25rem;  
+  margin-left: auto;
 }
 
 
