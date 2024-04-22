@@ -21,6 +21,7 @@ section.main-container {
   border: 1px solid #f0f0ff8c;
   position: relative;
   padding: 2rem;
+  transition: 0.5s;
 }
 
 
@@ -34,17 +35,33 @@ section.main-container {
   padding: 0.25rem;
 }
 
+.collections {
+  margin-top: 2rem;
+}
+
+
 
 .collection {
   display: flex;
   align-items: center;
+  gap: 1rem;
   margin-bottom: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+
+
+.collection:hover {
+  border-color: #f0f0ff;
+  border-radius: 0.5rem;
 }
 
 
 h2 { 
   font-size: 1.2rem;
 }
+
 
 img {
   border-radius: 0.5rem;
@@ -54,8 +71,83 @@ img {
 }
 
 
-p {
+.collection-info > div {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
 }
 
+
+.dot {
+  background: #000;
+  border-radius: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button.create-new {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #d24964;
+  font-weight: 700;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+button.create-new:hover {
+  background: #fabde227;
+}
+
+
+
+/* 일반적으로 이 값은 "bold"와 동일한 효과를 줍니다.
+ CSS에서는 100부터 900까지의 값을 가질 수 있으며, 
+ 값이 클수록 텍스트는 더 굵어집니다. 
+ 700은 그 중에서 중간 정도의 굵기를 가집니다 */
+
+.icon-tabler-plus {
+  border-radius: 50%;
+  background: #d2496515;
+  padding: 0.25rem;
+}
+
+button.save {
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  width: 150px;
+  background: linear-gradient(90deg, #c584f0, #fb6d9e);
+}
+/* "linear-gradient": 그라데이션을 생성하는 함수입니다. */
+/* "90deg": 그라데이션의 방향을 지정합니다. */
+/* 여기서는 90도 즉, 위에서 아래 방향으로 그라데이션을 생성하도록 지정되었습니다.*/
+
+
+button.save:hover {
+  box-shadow: 0 0 1.2rem #e492fb;
+  transform: scale(1.1);
+}
+
+
+@media(max-width: 500px){
+  .collection {
+    flex-direction: column;
+    text-align: center;
+  }
+}
