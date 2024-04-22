@@ -1,0 +1,26 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+section {
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 1rem 1rem #f0f0ff;
+  border-radius: 1rem;
+  border: 1px solid #f0f0ff8c;
+  position: relative;
+}
+
+.collection {
+
+}
