@@ -9,18 +9,53 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 
-section {
+section.main-container {
   width: 90%;
-  max-width: 800px;
-  box-shadow: 0 1rem 1rem #f0f0ff;
+  max-width: 600px;
+  box-shadow: 0 2.5rem 1.5rem -1.2rem #f0f0ff;
   border-radius: 1rem;
   border: 1px solid #f0f0ff8c;
   position: relative;
+  padding: 2rem;
 }
+
+
+.icon-tabler-letter-x {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #e3e3e3;
+  padding: 0.25rem;
+}
+
 
 .collection {
-
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
+
+
+h2 { 
+  font-size: 1.2rem;
+}
+
+img {
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 1rem -0.8rem #bdbdfa;
+  object-fit: cover;
+  border : 1px solid #f0f0ff;
+}
+
+
+p {
+  display: flex;
+  align-items: center;
+}
+
