@@ -47,7 +47,7 @@ section.main-container {
   gap: 1rem;
   margin-bottom: 1.5rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid transparent;
 }
 
@@ -146,12 +146,16 @@ button.save:hover {
 
 .icon-tabler-check {
   border-radius: 50%;
-  border: 5px solid #bdbdfa73;
+  border: 5px solid #dcdcff;
   background: #000;
   padding: 0.25rem;  
   margin-left: auto;
 }
 
+
+.check {
+  margin-left: auto;
+}
 
 
 @media(max-width: 500px){
@@ -159,4 +163,9 @@ button.save:hover {
     flex-direction: column;
     text-align: center;
   }
+
+  .check {
+    margin-left: unset;
+  }
+
 }
