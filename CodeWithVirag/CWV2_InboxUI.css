@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 기본적으로 HTML 요소의 크기는 해당 요소의 콘텐츠 크기에만
+영향을 받습니다. 그라나 'box-sizing' 속성을 사용하여
+요소의 크기 를 레이아웃에 포함할지 여부를 결정할 수 있습니다.
+
+예를 들어 요소의 너비를 100px로 설정하고 패딩 10px 테두리 2px로
+지정했을때
+box-sizing: border-box; 요소의 실제 너비는 콘텐츠+패딩+테두리 합친값이 100px이 됩니다.
+box-sizing: content-box; 실제너비는 콘텐츠의 크기인 100px에
+패딩과 테두리의 크기를 추가하여 더 큰값이 됩니다. */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f6ff;
+}
+
+.main-container {
+  width: 90%;
+  min-width: 600px;  
+}
+
+.green-background {
+  background: linear-gradient(#40ded3, #3edfa7);
+  border-radius: 2rem;
+  width: 70%;
+  height: 400px;
+  position: absolute;
+}
+
+.content {
+  border-radius: 2rem;
+  background: #fff;
+  position: relative;
+}
