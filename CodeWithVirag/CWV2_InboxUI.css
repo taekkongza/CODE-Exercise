@@ -20,23 +20,40 @@ body {
   justify-content: center;
   align-items: center;
   background: #f8f6ff;
+  color: #1f2555;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .main-container {
   width: 90%;
-  min-width: 600px;  
+  max-width: 600px;  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .green-background {
-  background: linear-gradient(#40ded3, #3edfa7);
+  background: linear-gradient(45deg, #40ded3, #3edfa7);
   border-radius: 2rem;
   width: 70%;
-  height: 400px;
+  height: 550px;
   position: absolute;
+  left: 2rem;
+  top: -4rem;
 }
 
 .content {
+  width: 70%;
   border-radius: 2rem;
   background: #fff;
   position: relative;
+  box-shadow: 0 2rem 2rem #d3f2f7;
+  padding: 3rem;
 }
+
+
+
+
+
