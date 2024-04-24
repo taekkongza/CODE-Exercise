@@ -1,0 +1,178 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffbfb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  gap: 2rem;
+  box-shadow: 0 1rem 1.5rem #fae1f0;  
+}
+
+img {
+  /* border-radius: 0.5rem; */
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  object-fit: cover;
+  width: 50%;
+  /* max-width: 300px; */
+}
+
+.form-section {
+  width: 100%;
+  padding: 2rem 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+legend {
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  margin-bottom: 3rem;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+form p label {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+form p input {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background-color: #fffbfb;
+  border: 1.5px solid #72727232;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+/* form p input : form 요소 아래 모든 p 요소, p요소 자식 input 
+   form > p > input :  form 요소 바로 아래 p 요소, 그 자식인 input 요소들
+   form, p, input :  동등하게 모두 선택   
+*/
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.button-constainer p {
+  color: #727272;
+  font-size: 0.8rem;
+}
+
+button {
+  width: 100%;
+  border-radius: 0.25rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem;
+  transition: 0.5s;
+}
+
+.submit {
+  background: #a04625;
+  box-shadow: 0 0.5rem 1rem #f6e4c8;
+
+}
+
+.submit:hover {
+  background-color: #a04625f3;
+}
+
+.linkedin-btn {
+  background: #0f64c2;
+  box-shadow: 0 0.5rem 1rem #c9d8ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.linkedin-btn:hover {
+  background-color: #0f63c2b6;
+}
+
+
+::placeholer {
+  color: #727272;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dot {
+  border-radius: 50%;
+  width: 0.1rem;
+  height: 0.1rem;
+  background-color: #000;
+
+}
+
+
+a {
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: #0f64c2;
+}
+
+
+@media (max-width: 600px){
+  .login-container {
+    flex-direction: column;
+    margin: 3rem 0;
+
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-position: 0 30%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: unset;
+  }
+
+  .buttons-container {
+    align-items: center;
+  }
+}
+
+/* object-position
+CSS 에서 이미지나 비디오 또는 대체 콘텐츠의 위치를 지정
+수평위치 - left center right  또는 길이(10px)
+수직위치 - top center bottom  또는 길이(10px)
+
+eg: object-position: 0 30% 
+수평 - 왼쪽 정렬, 수직- 상단에서 30% 위치 배치*/
+
