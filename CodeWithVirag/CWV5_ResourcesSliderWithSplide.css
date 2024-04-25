@@ -48,3 +48,91 @@ line-height: 1.5; 는 텍스트 높이를 글꼴 크기의
   display: flex;
   gap: 0.5rem;
 }
+
+.splide__slide {
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+  box-shadow: 0 1rem 1rem -0.5rem #292949;
+}
+
+.icon-tabler {
+  background-color: #f4f7ff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  min-width: 80px;
+  height: 80px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.icon-tabler-chevron-left, .icon-tabler-chevron-right {
+  min-width: 45px;
+  height: 45px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fafcff;
+  color: #847eb4;
+  border: 1.5px solid #29294947;
+}
+
+
+.splide__arrow--prev > svg {
+  /* transform: scaleX(1); */
+  transform: rotate(180deg);  
+}
+/* transform : 요소의 변형(크기 조정, 회전, 이동 등) 요소의 외관을 조절하는데 사용
+scaleX( ) 함수를 요소의 가로 축을 따라 크기를 조절합니다. 인수로 전달되는 값은 크기 조절 비율입니다.
+scaleX(1) 가로축의 크기를 원래 크기로 유지한다는 것을 의미합니다.*/
+
+.splide__pagination__page {
+  border-right-color: #847eb4;
+  width: 0.8rem;
+  height: 0.8rem;
+
+}
+
+.splide__pagination__page.is-active {
+  border: 2px solid #847eb4;
+  width: 0.7rem;
+  height: 0.7rem;
+  
+}
+
+@media (max-width: 760px){
+  .splide {
+    gap: 0.1rem;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  p {
+    font-size: 0.65rem;
+  }
+
+  .icon-tabler-chevron-left, .icon-tabler-chevron-right {
+    padding: 0.25rem;
+    min-width: 35px;
+    height: 35px;
+
+  }
+}
+
