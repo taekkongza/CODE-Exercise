@@ -1,0 +1,84 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafc;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+/* overflow: hidden 
+  요소의 내용이 요소의 박스 크기를 초과할 경우 
+  넘치는 부분을 잘라내는 속성*/
+/* overflow
+1. visible : 요소 내용이 박스 밖으로 보임
+2. scroll : 항상 스크롤바가 생김
+3. auto : 크기를 초과하면 자동으로 스크롤바 생김.
+4. inherit : 부모 요소의 overflow 값을 상속받음.
+ */
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.gray-background {
+  background-color: #ececf0;
+  position: absolute;
+  bottom: 0%;
+  left: 25%;
+  width: 300px;
+  height: 70vh;
+
+}
+
+.dot {
+  background-color: #8790b4;
+
+}
+
+
+img {
+  object-fit: cover;
+}
+
+/* Object-fit
+CSS에서 이미지나 동영상 등의 대체 요소(replaced element)
+의 크기 조절 방식을 지정하는 속성입니다.
+- fill : 이미지 종회비를 유지하지 않고 지정된 크기에 맞게 늘리거나 줄임
+- contain : 이미지의 종횡비를 유지. 지정된 크기내에 최대한 크게 표시
+
+- cover : 이미지의 종횡비를 유지. 지정된 크기를 가득 채우도록 그기 조절
+          일부 이미지가 잘릴 수 있다.
+
+- none : 이미지 본래 크기대로 표시
+- scale-down : 이미지가 지정된 크기보다 크면 contain과 같이
+        크기를 줄이고, 작으면 본래 크기대로 표시
+*/
+
+section {
+  background-color: #fff;
+}
+
+
+.headphones {
+
+}
+
+.location {
+
+}
+
+.profile {
+  
+}
