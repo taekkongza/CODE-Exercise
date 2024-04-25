@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f7ff;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #292949;
+}
+
+.resources-container {
+  width: 95%;
+  max-width: 900px;
+}
+
+.splide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 250px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+/* line-height : 텍스트의 한줄의 높이를 결정
+line-height: 1.5; 는 텍스트 높이를 글꼴 크기의
+1.5배로 설정한다는 뜻 */
+
+.splide__list {
+  display: flex;
+  gap: 0.5rem;
+}
