@@ -27,29 +27,35 @@ body {
 main {
   width: 90%;
   max-width: 1000px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 5rem 1rem;
+
 }
 
 
 .gray-background {
   background-color: #ececf0;
-  position: absolute;
+  position: fixed;
   bottom: 0%;
-  left: 25%;
-  width: 300px;
+  left: 40%;
+  width: 350px;
   height: 70vh;
+  z-index: -1;
 
 }
 
-.dot {
+/* .dot {
   background-color: #8790b4;
-
-}
+} */
 
 
 img {
   object-fit: cover;
+  border-radius: 0.2rem;
 }
 
 /* Object-fit
@@ -67,18 +73,226 @@ CSS에서 이미지나 동영상 등의 대체 요소(replaced element)
 */
 
 section {
+  width: 90%;
   background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.5rem  1.5rem -0.5rem #cbcbcb;
+}
+
+/*  box-shadow: 0 1.5rem 1.5rem -0.5rem #cbcbcb;
+
+그림자가
+1. 수평 오프셋 - horizontal offset - 오른쪽으로 얼마나 가나
+2. 수직 오프셋 - vertical offset - 아래로 얼마나 가나
+3. 흐림정도 - blur radius - 그림자 얼마나 흐리게 되나 끝에서
+4. 그림자의 크기 - spread radius - 그림자 축소 확대, 음수면 축소
+5. 그림자의 색상 지정
+*/
+
+#shadow-host-companion {
+  display: none;
 }
 
 
 .headphones {
+  max-width: 350px;
+  position: relative;
+}
+
+.headphones img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  object-position: 0 60%;
+  width: 100%;
+}
+
+/* object-position
+CSS 속성으로 이미지나 비디오와 같은 요소의 위치를 지정함.
+- x-position 
+  요소내에서 가로 위치를 나타내는 값
+  px, % , left, center, right
+
+- y-position
+  요소내에서 세로 위치
+  px, %, top, center, bottom
+
+object-poistion: 50% 50%;
+가로 세로 중간
+*/
+
+.headphones-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+
+
+#profile-1 {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: unset;
+
+}
+
+
+/* .image-container {
+  overflow: hidden;
+  max-width: 250px;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+} */
+/* margin: 0 auto
+상하 마진 = 0 , 좌우 마진 = 자동 , 부모요소의 중앙 */
+
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 { 
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+}
+
+.headphones-paragraph, .date {
+  font-size: 0.8rem;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: -3rem;
+  left: 40%;
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  border: 1px solid #8790b45f;
+  cursor: pointer;
+  /* background-color: #fff; */
+}
+
+.active {
+  background-color: #8790b4;
+}
+
+.location-container {
+  max-width: 450px;
+  position: relative;
+
+}
+
+.icon-tabler-x {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #8790b45f;
+  color: #8790b4;
+  padding: 0.25rem;
+}
+
+.locations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  row-gap: 1.2rem;
+  margin-top: 2rem;
 
 }
 
 .location {
-
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+ 
 }
+
+.location:hover, .selected {
+  background: #8790b41d;
+  color: #000;
+}
+
+
 
 .profile {
-  
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
 }
+
+.email, .phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.email {
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  word-break: break-all;
+}
+
+/* word-break
+CSS에서 텍스트 줄 바꿈 규칙을 지정
+특히 긴 단어가 줄넘김 처리될때
+
+- normal : 기본값, 브라우저가 단어 단위로 텍스트를 줄바꿈합니다.
+- break-all : 긴 단어가 줄 바꿈 처리될 때, 단어 내의 어느 위치에서든 
+    줄 바꿈이 발생합니다. 이는 단어의 일부가 다음줄로 넘어가더라도 혀용됩니다.
+- keep-all : 단어의 내용을 유지하며 줄 바꿈이 발생합니다.
+    주로 중국어 일본어 한국어와 같은 언어의 단어에서 사용되며,
+    띄어쓰기가 없는 문자열을 다룰때에 유용합니다.    
+ */
+
+@media(max-width: 500px){
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon-tabler-x {
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+
+  .location-container h2 {
+    text-align: center;
+  }
+
+  .locations {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .location {
+    padding: 0.25rem;
+  }
+}
+
+
