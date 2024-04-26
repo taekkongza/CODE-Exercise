@@ -16,9 +16,33 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       
       <div class="splide__arrows">
         <button class="splide__arrow--prev">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+          <svg  xmlns="http://www.w3.org/2000/svg"s width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 6 l6 6l-6 6" /></svg>
         </button>
       </div>
+      <!-- SVG - Scalable Vector Graphics
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 6l6 6l-6 6" />
+
+      두개의  path 요소로 구성
+      첫번째 path는 표시되지 않는 빈영역
+      두번째 path는 화살표 모양 정의
+
+      d: 명령어를 사용하여 경로를 설명
+      M10 6l6 6l-6 6
+      #### 우측 상단이 0,0 ==> 좌측으로 , 아래로 가 양수
+      시작점을 10,6 으로 이동후 선을 따라 6,6으로 이동한다음 다시 -6,6이동
+
+      d 속성에 사용되는 주요 명령어는 다음과 같습니다:
+M (moveto) - 새로운 하위 경로를 시작하고 주어진 좌표로 이동합니다.
+L (lineto) - 주어진 좌표까지 직선을 그립니다.
+H (horizontal lineto) - 주어진 x좌표까지 수평선을 그립니다.
+V (vertical lineto) - 주어진 y좌표까지 수직선을 그립니다.
+C (curveto) - 주어진 좌표까지 3차 베지어 곡선을 그립니다.
+S (smooth curveto) - 주어진 좌표까지 부드러운 3차 베지어 곡선을 그립니다.
+Q (quadratic Bézier curveto) - 주어진 좌표까지 2차 베지어 곡선을 그립니다.
+T (smooth quadratic Bézier curveto) - 주어진 좌표까지 부드러운 2차 베지어 곡선을 그립니다.
+A (elliptical Arc) - 주어진 좌표까지 타원호를 그립니다.
+Z (closepath) - 현재 하위 경로를 닫습니다.
+      --> 
 
     
       <div class="splide__track">
