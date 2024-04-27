@@ -1,0 +1,216 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #daccc8, #b39c94);
+/* background-color 속성이 작동하지 않는 이유는
+linear-gradient()가 background-image 속성에 적용되어야
+하기 때문입니다.
+
+background-color는 단일 색상을 지정하는데 사용
+linear-gradient() 는 그라데이션 이미지를 생성하므로
+background-image 속성에 적용해야 합니다.*/
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "lato", sans-serif;
+  padding: 5rem 0;
+
+}
+
+/* linear-gradient()
+CSS 함수로 두개 이상의 색상을 직선을 따라 
+점진적으로 변화시켜 배경 이미지를 만든다.
+그라데이션 효과
+기본문법
+linear-gradient(
+  [ <angle> || <side-or-corner> ],
+  <color-stop>[, <color-hint>]? [, <color-stop>]+
+)
+- angle은 그라데이션의 방향을 각도로 지정
+- side or corner는 키워드로 방향을 지정
+- color stop은 그라데이션 상의 색상과 위치를 지정
+- color hint는 색상사이의 부드러운 전환을 위한 힌트
+
+
+body {
+  background: linear-gradient(to bottom right, #daccc8, #b39c94);
+}
+배경을 왼쪽 상단에서 오른쪽 하단으로 
+#daccc8 #b39c94 색상으로 그라데이션
+
+이때 background-repeat속성을 no-repeat
+min-height: 100vh 로 배경이 화면 전체를 덮는다.
+
+linear-gradient()는 단순한 두 색상 사이의 전환 뿐만 아니라, 여러 색상을 지정하여 복잡함 그라데이션 효과를 만들수 있다.
+
+또한 각도나 방향 키워드를 조정하여 다양한 형태의 그라데이션을 연출할 수 있다.
+*/
+
+.post {
+  margin: 1.5rem 0;
+  background: #eceae2;
+  border-radius: 2rem;
+  padding: 2rem;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+
+}
+
+.post textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 60px;
+  font-family: inherit;
+}
+
+/* 
+outline: none;
+textarea에 포커스가 있을때 나타나는 기본 아웃라인을 제거합니다.
+*/
+
+.icon-tabler-x {
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+
+}
+
+.main-container {
+  background: #eceae2;
+  border-radius: 2rem;
+  box-shadow: 0 2rem 2rem #a1849f;
+  padding: 3rem;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 3rem;
+}
+
+.shadow-bg {
+  background-color: #c2aea7;
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -3rem;
+  left: -3rem;
+  z-index: -1;
+}
+
+.upper-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.upper-part p {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* 
+letter spacing
+CSS에서 문자 간의 간격 조절
+양수 - 늘린다.
+0 또는 normal - 기본 간격
+*/
+
+.icon-tabler-dots {
+  cursor: pointer;
+}
+
+.description {
+  font-size: 1.2rem;
+  max-width: 300px;
+  margin: 1rem 0  1.2rem 0;
+}
+
+.numbers {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.members, .online {
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+}
+
+/* 
+line-height
+요소의 줄높이를 설정
+1.4는 글꼴 크기의 1.4배
+*/
+
+.members span, .online span {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.buttons-container {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+button {
+  display: block;
+  border: 1px solid transparent;
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* 
+## flex: 1;
+
+이 속성은 Flexbox 레이아웃에서 사용되며, 플렉스 아이템의 크기를 조정하는 데 사용됩니다.
+
+flex: 1;은 다음과 같은 의미를 가집니다:
+
+- flex-grow: 1 - 플렉스 아이템이 필요한 경우 자라날 수 있는 능력을 나타냅니다. 1은 아이템이 동일한 비율로 자라날 수 있음을 의미합니다.
+
+- flex-shrink: 1 - 플렉스 아이템이 필요한 경우 줄어들 수 있는 능력을 나타냅니다. 1은 아이템이 동일한 비율로 줄어들 수 있음을 의미합니다.
+
+- flex-basis: auto - 플렉스 아이템의 기본 크기를 설정합니다. auto는 아이템의 width 또는 height 속성 값을 사용함을 의미합니다.
+
+이 속성을 사용하면 버튼이 플렉스 컨테이너 내에서 동일한 비율로 자라나거나 줄어들며, 기본적으로 width 또는 height 속성 값을 사용하게 됩니다.
+
+## transition: 0.5s;
+
+이 속성은 CSS 속성 값이 변경될 때 전환 효과를 만듭니다.
+
+transition: 0.5s;는 다음과 같은 의미를 가집니다:
+
+- transition-property: all - 전환 효과가 적용될 CSS 속성을 지정합니다. all은 모든 속성에 전환 효과가 적용됨을 의미합니다.
+
+- transition-duration: 0.5s - 전환 효과의 지속 시간을 설정합니다. 0.5s는 0.5초를 의미합니다.
+
+- transition-timing-function: ease - 전환 효과의 타이밍 함수를 설정합니다. ease는 느리게 시작하여 점점 빨라지다가 느리게 끝나는 기본 타이밍 함수를 사용함을 의미합니다.
+
+- transition-delay: 0s - 전환 효과가 시작되기 전 대기 시간을 설정합니다. 0s는 지연 없이 즉시 시작함을 의미합니다.
+
+이 속성을 사용하면 버튼의 CSS 속성 값이 변경될 때(예: hover 상태) 0.5초 동안 부드럽게 전환되는 효과를 만들 수 있습니다. 이를 통해 사용자 경험을 향상시킬 수 있습니다.
+*/
+
+
