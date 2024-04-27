@@ -183,34 +183,63 @@ button {
 
 /* 
 ## flex: 1;
-
-이 속성은 Flexbox 레이아웃에서 사용되며, 플렉스 아이템의 크기를 조정하는 데 사용됩니다.
+Flexbox 레이아웃에서 사용되며, 플렉스 아이템의 크기를 조정
 
 flex: 1;은 다음과 같은 의미를 가집니다:
 
-- flex-grow: 1 - 플렉스 아이템이 필요한 경우 자라날 수 있는 능력을 나타냅니다. 1은 아이템이 동일한 비율로 자라날 수 있음을 의미합니다.
+- flex-grow: 1 
+- 플렉스 아이템이 필요한 경우 자라날 수 있는 능력을 나타냅니다. 1은 아이템이 동일한 비율로 자라날 수 있음을 의미합니다.
 
-- flex-shrink: 1 - 플렉스 아이템이 필요한 경우 줄어들 수 있는 능력을 나타냅니다. 1은 아이템이 동일한 비율로 줄어들 수 있음을 의미합니다.
+- flex-shrink: 1 
+- 플렉스 아이템이 필요한 경우 줄어들 수 있는 능력을 나타냅니다. 1은 아이템이 동일한 비율로 줄어들 수 있음을 의미합니다.
 
-- flex-basis: auto - 플렉스 아이템의 기본 크기를 설정합니다. auto는 아이템의 width 또는 height 속성 값을 사용함을 의미합니다.
+- flex-basis: auto 
+- 플렉스 아이템의 기본 크기를 설정합니다. auto는 아이템의 width 또는 height 속성 값을 사용함을 의미합니다.
 
 이 속성을 사용하면 버튼이 플렉스 컨테이너 내에서 동일한 비율로 자라나거나 줄어들며, 기본적으로 width 또는 height 속성 값을 사용하게 됩니다.
 
-## transition: 0.5s;
+## transition
 
-이 속성은 CSS 속성 값이 변경될 때 전환 효과를 만듭니다.
+CSS 속성 값이 변경될 때 전환 효과를 만듭니다.
 
-transition: 0.5s;는 다음과 같은 의미를 가집니다:
+- transition-property: all; 
+- 전환 효과가 적용될 CSS 속성을 지정합니다. all은 모든 속성에 전환 효과가 적용됨을 의미합니다.
 
-- transition-property: all - 전환 효과가 적용될 CSS 속성을 지정합니다. all은 모든 속성에 전환 효과가 적용됨을 의미합니다.
+- transition-duration: 0.5s; 
+- 전환 효과의 지속 시간을 설정합니다. 0.5s는 0.5초를 의미합니다.
 
-- transition-duration: 0.5s - 전환 효과의 지속 시간을 설정합니다. 0.5s는 0.5초를 의미합니다.
+- transition-timing-function: ease;
+- 전환 효과의 타이밍 함수를 설정합니다. ease는 느리게 시작하여 점점 빨라지다가 느리게 끝나는 기본 타이밍 함수를 사용함을 의미합니다.
 
-- transition-timing-function: ease - 전환 효과의 타이밍 함수를 설정합니다. ease는 느리게 시작하여 점점 빨라지다가 느리게 끝나는 기본 타이밍 함수를 사용함을 의미합니다.
+- transition-delay: 0s 
+- 전환 효과가 시작되기 전 대기 시간을 설정합니다. 0s는 지연 없이 즉시 시작함을 의미합니다.
 
-- transition-delay: 0s - 전환 효과가 시작되기 전 대기 시간을 설정합니다. 0s는 지연 없이 즉시 시작함을 의미합니다.
 
-이 속성을 사용하면 버튼의 CSS 속성 값이 변경될 때(예: hover 상태) 0.5초 동안 부드럽게 전환되는 효과를 만들 수 있습니다. 이를 통해 사용자 경험을 향상시킬 수 있습니다.
+transition: 0.5s;
+버튼의 CSS 속성 값이 변경될 때 0.5초 동안 부드럽게 전환되는 효과를 만들 수 있습니다. 
 */
+
+.join:hover, .joined {
+  background-color: transparent;
+  border-color: #000;
+  color: #000;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #000000a0;
+}
+
+@media (max-width: 350px) {
+  .main-container {
+    padding: 1.5rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+
 
 
