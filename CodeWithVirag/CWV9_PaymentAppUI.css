@@ -83,7 +83,7 @@
 
     요약
     요소 선택자는 실제 HTML 요소를 선택하고 
-    가상 요소 선택자는 실제 요소의 특정 부분을 선택하거나 생성한다는 치이
+    가상 요소 선택자는 실제 요소의 특정 부분을 선택하거나 생성한다는 차이점
   */
 
 body {
@@ -293,6 +293,173 @@ img {
 */
 
 
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.icon-tabler-dots-vertical {
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 1rem;
+  color: #989898;
+}
+
+.name {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.username {
+  font-size: 0.6rem;
+  color: #0000007e;
+}
+
+.profile button {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  color: #fff;
+  padding: 0.5rem;
+  width: 90px;
+  font-size: 0.6rem;
+  background: linear-gradient(90deg, #ee4a56, #e2595be4);
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.profile button:hover {
+  background: transparent;
+  border-color: #ee4a56;
+  color: #ee4a56;
+}
+
+
+.profile button.added {
+  background: transparent;
+  border-color: #ee4a56;
+  color: #ee4a56;
+}
+
+
+/* Slider section */
+.splide {
+  margin-bottom: 1.5rem;
+}
+
+.splide li p {
+  font-size: 0.8rem;
+  color: #515151;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 2rem;
+}
+
+.splide__arrows {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.splide__arrows button {
+  color: #ee4a56;
+  background: transparent;
+  border: 1px solid #ee4a553d;
+  border-radius: 1rem;
+  padding: 0.1rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.splide__arrows--prev {
+  transform: scaleX(-1);
+}
+
+.splide__pagination__page {
+  background: #ee4a5589;
+  width: 0.3rem;
+  height: 0.3rem;
+}
+
+.splide__pagination__page.is-active {
+  background: #ee4a56;
+  border: 2px solid #ffa4a4;
+  width: 0.5rem;
+  height: 0.5rem;
+  
+}
+
+@media (max-width: 320px) {
+  /* 화면 크기가 320px 이하일 때 적용되는 미디어 쿼리 */
+  .profile:nth-child(3) {
+    border-bottom: 1px solid #dcdcdc;
+    border-right: none;
+  }
+  .profile:first-of-type {
+    border-right: none;
+  }
+}
+
+/* 
+  *쿼리* 라는 용어는 프로그래밍 분야에서 
+  데이터를 요청하거나 검색하는 행위를 나타낸다.
+
+  단
+  미디어 쿼리는 CSS에서 장치의 특성에 따라
+  스타일을 적용하는 기능
+*/
+
+
+/* 
+  @media 
+    미디어 쿼리는 반응형 웹 디자인에서 매우 중요한 기능입니다.
+    미디어 쿼리를 사용하면 환면 크기나 기기 특성에 따라 선택적으로 CSS 스타일을 적용할 수 있습니다.
+
+    기본문법 CSS
+    @media (조건) {
+      // 조건이 true일 때 정용될 CSS 
+    }
+
+    여기서 조건은 
+    미디어 유형(screen, print등)이나
+    미디어 특성(width, height, orientation 등)을 나타냅니다.
+    이 조건이 true일때 중괄호 안의 CSS 스타일이 적용된다.
+
+    # 미디어 유형
+      장치의 일반적인 범주, 
+      대표적인 미디어 유형으로는 
+      screen print speech등이 있습니다.
+      미디어 유형을 지정하지 않으면 
+      기본값인 all 이 사용됩니다.
+
+    # 미디어 특성
+      미디어 특성은 장치의 구체적인 특성을 나타냅니다.
+      대표적인 미디어 특성으로는
+      width height orientation resolution 등이 있습니다.
+
+    예)
+    화면 너비가 320px 이하일 때
+    @media (max-width: 320px) {
+      스타일 적용
+    }
+
+    화면 방향이 landscape 일 때
+    @media (orientation: landscape) {
+      스타일 적용
+    }
+
+    화면 해상도가 2배 이상일 때
+    @media (min-resolution: 2dppx) {
+      스타일 적용
+    }
+
+  */
 
 
 
