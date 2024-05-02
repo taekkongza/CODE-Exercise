@@ -7,3 +7,14 @@
 
 console.log('hello world');
 
+
+
+// javascript 공식 사이트
+// ecma-international.org
+
+// 개발자 방문 사이트
+// developer.mozilla.org  --> 공부 사이트 추천
+
+// w3school - 사기업. 공식은 아니다.
+
+
