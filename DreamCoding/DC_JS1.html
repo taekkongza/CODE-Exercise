@@ -4,8 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- <script async src="DC_JS1.js"></script>  -->
+  <!--  async는 Parsing HTML fetching js 같이 -- executing시 block -- parsing -->
+
+  <script defer src="DC_JS1.js"></script>
+  <!-- defer는 Parsing HTML과 fetching js 같이 -- parsing이 끝나면 executing js -->
+
+
 </head>
 <body>
-  <script src="DC_JS1.js"></script>
+  <!-- <script src="DC_JS1.js"></script> -->
+  <!-- 안정적이지만 js에 많이 의존하는 사이트는 에러날수 있다. -->
+
+
+  <!-- 결론적으로 head에서 defer 선언하는게 제일 안전하다. -->
 </body>
 </html>

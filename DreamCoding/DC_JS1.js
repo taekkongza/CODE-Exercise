@@ -1,4 +1,8 @@
 
+'use strict';
+// ECMA5 부터 사용
+// 개발하실때 꼭 사용해야함.
+
 // nodejs 를 다운로드하면
 // terminal에서 browser가 없어도
 // node DC_JS1.js
@@ -7,6 +11,10 @@
 
 console.log('hello world');
 
+let a;
+a = 10;
+console.log(a)
+// 'use strict' -- 선언 안하면 에러
 
 
 // javascript 공식 사이트
