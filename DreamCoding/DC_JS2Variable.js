@@ -3,6 +3,9 @@
 // Variable
 // let
 // (added in ES6)
+
+// Variable : rw (read/write)
+
 /*
 let name = 'ellie';
 console.log(name);
@@ -61,13 +64,22 @@ console.log(age1);
 
 //--------------------------------------------------------------
 //3. constant
+// use const whenever possible.
+// only use let if variable needs to change
+
+// Constant - r (read only)
+const daysInWeek = 7;
+const maxNumber = 5;
+
+// Note!
+// Immutable data types : primitive types, frozen objects (i.e object.freeze())
+// Mutable data types : all objects by default are mutable in JS
+
 // favor immutable data type always for a few reasons;
 // - security
 // -  thread safety
 // - reduce human mistakes
 
-const daysInWeek = 7;
-const maxNumber = 5;
 
 
 //----------------------------------------------------------------
@@ -220,6 +232,8 @@ console.log(`value: ${text}, type: ${typeof text}`); // 1.4 number
 text = '8' / '2';
 console.log(`value: ${text}, type: ${typeof text}`); // 4 number
 
+
+// 에러가 나는 경우 ~~
 text = 'hello'
 console.log(`value: ${text}, type: ${typeof text}`); // hello string
 console.log(text.charAt(0));  // h
