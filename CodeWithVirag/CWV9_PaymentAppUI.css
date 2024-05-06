@@ -373,8 +373,8 @@ img {
   padding: 0.1rem 0.8rem;
   cursor: pointer;
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center; 
+  justify-content: center;
 }
 
 .splide__arrows--prev {
