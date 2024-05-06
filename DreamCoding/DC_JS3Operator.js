@@ -186,9 +186,7 @@ console.log('10. Switch statement');
 // 10 switch statement
 // use for multiple if checks
 // use for enum-like value check
-// use for multiple type checks in TS
-
-
+// use for multipl
 
 
 
