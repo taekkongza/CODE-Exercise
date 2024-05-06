@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shine Effect</title>
+    <style>
+      .button {
+        position: relative;
+        background-color: #2463a7e5;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        border-radius: 5rem;
+      }
+      
+      /*
+      :: 가상 요소는 CSS에서 실제로 존재하지 않는 요소를 만들거나
+      범위를 만들어서 스타일을 적용할 때 사용하는 선택자 종류
+
+      특징>
+      1. HTML에 실제로 존재하지 않는 요소를 CSS로 가상으로 생성
+      2. 선택자 앞에 :: 이중콜론을 붙여 표기
+      3. 주로 요소의 앞('::before') 이나 뒤('::after')에
+          새로운 콘텐츠를 추가사는데 사용
+      4. 크기, 여백, 패딩 등의 스타일을 적용할 수 있지만 
+          inline요소이므로 너비와 높이 값은 제한적
+
+      따라서 :: 가상요소는 HTML 문서에 실제로 존재하지 않는 요소를
+      CSS로 생성하여 스타일을 적용할 수 있게 해주는 선택자 방식
+      */
+      .button::before {
+        content:"";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: linear-gradient(120deg, 
+        rgba(255,255,255,0) 30%,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0) 70%
+        );
+        top: 0;
+        left: -100px;
+        opacity: 0.6;      
+      }
+      
+      @keyframes shine {
+        0% {left: -100px;}
+        60% {left: calc(100% -100px);}
+        to {left: 100%;}
+      }
+      
+      .button:hover::before {
+        animation: shine 1.5s ease-out infinite;
+      }
+      </style>
+</head>
+<body>
+  <button class="button">Apply Now</button>
+  
+</body>
+</html>
