@@ -1,16 +1,16 @@
 # 정규 표현식 정리
 
 # REGEX - regular expression
-text에서 특정 패턴을 찾을때
+## ==> : text에서 특정 패턴을 찾을때
 
-/pattern/flag
+# --> /pattern/flag
 
 /Hi/gm
 
 > ### flag
->g global  
+**g global**    
 i case insensitive  
-m multiline  
+**m multiline**  
 s single line  
 u unicode  
 y sticky  
@@ -77,7 +77,7 @@ gr[abdgGHI]y
 | `{min,max}` | 최소, 그리고 최대                   |
 
 
----
+--------
 
 /gray/gm
 

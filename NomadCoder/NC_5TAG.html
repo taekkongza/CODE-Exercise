@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="NC_5TAG.css">
+</head>
+<body>
+
+  <!-- progress tag, meter tag -->
+  <p>progress tag</p>
+  <progress id="progress" value="50" min="0" max="100"></progress>
+  <br><br><br>
+  
+  <p>meter tag</p>
+  <meter min="0" max="100" low="20" high="65" optimum="15" value="80"></meter>
+  <!-- CSS pseudo class로 좀더 커스터마이징 가능함
+  ::-webkit-meter-inner-elememnt
+  ::-webkit-meter-even-less-good-value
+  ::-webkit-meter-optinum-value
+  ::-webkit-meter-suboptinum-value  
+  -->
+  <br><br><br>
+
+
+
+
+
+  <!-- details tag , summary tag -->
+  <details>
+    <summary> What is the best 반찬? </summary> <!--summary 표시된부분, 질문-->
+    <span>It's 감치</span>  <!-- 클리하면 나타냄-->
+  </details>
+
+  <br><br><br>
+  
+  <details id="details">
+    <summary>
+      <span></span>
+      <span>What is the best 반찬?</span>
+    </summary>
+    <span>It's 김치!</span>
+  </details>
+  <!-- details 태그에는 open이라는 CSS selector  -->
+  
+  
+  <br><br><br>
+  
+  <!-- input type = "week" -->
+  <input type="date">
+  <br><br><br>
+  <input type="month">
+  <br><br><br>
+  <input type="week">
+  <br><br><br>
+  <input type="time">
+  
+  <br><br><br>
+  
+
+<!-- 기기에 따라 화면 성능에 따라 picture -->
+  <picture>
+    <source srcset media>
+    <img>
+  </picture>
+
+<!-- 
+source태그에서 srcset과 src의 차이점
+1.목적
+  - srcset 브라우저에게 다양한 크기의 이미지 URL을 제공하여
+     가장 적합한 이미지를 선택하도록한다.
+  - src 브라우저에 기본이미지 url 제공
+
+2. 사용방법 
+  - srcset 쉼표로 구분된 이미지 URL과 크기정보(x,y)를 제공합니다.
+  - src 는 단일 이미지 URL 제공
+3. 브라우저 지원
+  - srcset 최신브라우저 지원
+  - src 모든 브라우저 진지원
+4. 동작방식
+  - srcset 브라우저가 가장 적합한 이미지를 선택
+  - src 브라우저가 src 속성 이미지 사용
+ -->
+
+ <picture>
+  <source srcset="https://plus.unsplash.com/premium_photo-1675629311338-edc84c9b7c79?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" media="(min-width:1200px)">
+  <source srcset="https://images.unsplash.com/photo-1713528197472-7b7f7dbb5bb4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8" media="(min-width:900px)">
+  <source srcset="https://images.unsplash.com/photo-1714306915861-cd11ba62181b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8" media="(min-width:500px)">
+  <img src = "https://images.unsplash.com/photo-1714584981219-850bec3bb612?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8"/> <!--default값-->
+ </picture>
+
+<!-- media query  -->
+<!--디바이스 종류에 따라서 데이터양을 줄여 부팅 속도를 높여준다.-->
+
+
+<br><br><br>
+
+<!-- datalist  -->
+<!-- 자동완성기능 -->
+
+<label for="movie">What is your favorite movie?</label>
+<input type="text" id="movie" list="movie-options"/>
+<datalist id="movie-options">
+  <option value="Dune"></option>
+  <option value="Dark Waters"></option>
+  <option value="The Artist"></option>
+  <option value="The Avergers"></option>
+  <option value="Iron Man"></option>
+  <option value="Iron Man II"></option>
+  <option value="Matrix"></option>
+  <option value="Matrix II"></option>
+  <option value="Matrix III"></option>
+</datalist>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+progress[value]::-webkit-progress-bar {
+  background-color: whitesmoke;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+/* 
+  - 모든 <progress> 요소의 배경 색상과 그림자 효과 설정
+
+  - [value] : progress요소중 value 속성이 존재하는 
+              요소의 배경부분을 선택
+
+  - :: 가상요소??
+    :: 가상 요소는 HTML요소의 특정 부분에 CSS 스타일을 적용할 
+    수 있게 해주는 CSS 선택자
+    1. 실제 HTML문서에 존재하지 않는 요소도를 선택
+    2. 요소의 특정부분(예: 앞 뒤) 스타일을 적용할 수 있음
+    3. 대표적 예      ::before ::after 
+    4. content속성을 사용하여 가상요소에 텍스트나 이미지 추가 가능
+    5. 가상 요소는 개발자 도구에서 확인가능
+
+    따라서 
+    :: 가상요소는 HTML 요소의 특정 부분을 선택
+      CSS 스타일을 적용할 수 있게 해주는 CSS 선택자이다.
+
+  - :: 가상 요소 사용이유??
+    1. 실제로 존재하지 않는 요소에 CSS스타일 적용
+        ::before  ::after 을 사용하면 
+        HTML 요소 앞이나 뒤에 가상의 요소를 생성하고 
+        스타일을 적용할 수 있음
+    2. 기존 HTML요소의 특정부분 (예: 첫번째 글자, 첫번째 줄)에 스타일을
+        적용할 수 있다.
+        ::first-letter 첫번째 글자
+        ::first-line 첫번깨 줄에 스타일을 적용
+    3. 자바스크립트 없이 특정 상황(예:  입력 필드의 힌트 텍스트 )에
+      스타일을 적용할 수 있다.
+      ::placeholder 를 사용하면 입력필드의 힌트 텍스트 스타일 적용 가능함.
+
+
+  - webkit은 웹 브라우저 렌더링 엔진의 일종으로 HTML, CSS, JS 로 이루어진 
+      웹 콘텐츠를 사용자에게 표현하고 상호 작용을 가능하게 하는 핵심 
+      소프트웨어 엔진 
+      Apple safari 위해 처음 개발 현재 chrome등 다른 웹브라우저도 사용
+
+
+  - ::webkit-progress-bar
+    웹브라우저의 CSS 가상 요소 중 하나
+    이 가상 요소는 <progresss> 요소의 배경 부분을 선택하여 스타일 적용
+    특징
+    1. webkit 기반 브라우저(chrome, safari등)에서만 동작, 다른 브라우저는 지원안됨
+    2. <progress> 요소의 배경 부분을 선택 스타일 적용
+
+
+  -::webkit-progress-value
+    CSS 가상 요소 선택자중 하나로 <progress> 요소의 실제 진행 부분을 선택하여
+    스타일을 적용할 수 있게한다.
+
+    1. webkit 기반 브라우저만 동작
+    2. <progress> 요소의 실제 진행 부분(게이지 부분)을 선택하여 배경색, 모서리 
+      둥글기등 다양한 스타일을 적용
+    
+      예)
+      #progress::-webkit-progress-value {
+        background-color : #fdd4d6;
+        border-radius : 0px;
+        height: 28px;
+        width: 48px;
+      }
+
+   box-shadow: 0 2px 5px egba(0,0,0,0.25) inset; 
+   ~~ 진행바의 내부 그림자 효과
+
+  box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color] [inset];
+  ~~ inset 키워드를 사용하면 요소의 내부에 그림자 효과
+    반대로 사용하지 않으면 외부에 그림자 효과
+
+  
+  progress[value]::-webkit-progress-bar
+  #progress[value]::-webkit-progress-value
+  차이점
+  1. progress[value]::-webkit-progress-bar   모든 <progress> 요소의 배경부분 선택 스타일 적용
+  2. #progress[value]::-webkit-profress-value   id가 progress인 <progress>요소의 실제 진행부분
+                                            (게이지 부분)을 선택 스타일을 적용
+  공통점 : webkit 기반 브라우저에서만 작동.
+
+*/
+
+
+#progress[value] {
+  appearance: none;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 
+  #progress[value]
+  이 선택자는 id가 progress인 요소 선택
+
+  [value] 
+  id 가 progress인 <progress> 요소중 value 속성이 존재하는 요소 전체 선택
+
+  appearance : none  브라우저 기본 스타일을 제거, 사용자 정의 스타일 적용
+
+  overflow : hidden   진행바의 크기를 초과하는 부분을 숨깁니다.
+*/
+
+
+#progress[value]::-webkit-progress-value {
+  background-image: linear-gradient(to left, #2ecc71, #3498db);
+}
+
+/* ------------------------------------------------ */
+
+#details[open] {
+  background-color: #cdedfd;
+  background-image: linear-gradient(to
+    right,
+    #cdedfd 0%,
+    #ffec82 37%,
+    #ffcfd2 100%
+  );
+}
+/*  , 찍어서 에러  */
