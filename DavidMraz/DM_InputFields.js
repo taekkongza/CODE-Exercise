@@ -5,7 +5,6 @@ inputIcon.addEventListener("click",() => {
 
   if (inputIcon.querySelector('.icon-eye-off')){
   inputIcon.innerHTML = ``;
-
   const iconEye = document.createElement('span');
   iconEye.classList.add('icon-eye-on');
   iconEye.innerHTML = `
