@@ -83,3 +83,14 @@ body {
   border-bottom: 1px solid var(--gray-light);
 }
 
+
+.copy-link-dialog header h2 {
+  font-size: 1.5rem;
+  color: var(--headline);
+}
+
+.copy-link-dialog__content
+
+
+
+
