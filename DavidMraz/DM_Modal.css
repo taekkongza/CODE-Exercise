@@ -89,7 +89,60 @@ body {
   color: var(--headline);
 }
 
-.copy-link-dialog__content
+.copy-link-dialog__content {
+  padding: 2rem;
+}
+
+.copy-link-wrapper {
+  display: flex;
+  color: var(--gray-text);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: var(--text);
+  justify-content: space-between;
+  background: var(--gray-light);
+  padding: 0.25rem;
+  padding-left: 1.5rem;
+}
+
+.copy-link-wrapper input {
+  color: var(--gray-text);
+  outline: none;
+  border: none;
+  width: 100%;
+  font-weight: 800;
+  background: inherit;
+  font-size: 1.2rem;
+}
+
+.copy-link-wrapper input::selection {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.copy-link-dialog h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.copy-link-wrapper button {
+  color: var(--primary);
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  font-weight: 800;  
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.1rem;  
+  align-items: center;
+  background: var(--white);
+  border: none;
+  box-shadow: rgba(149, 157,165, 0.2) 0px 3px 6px;
+}
+
+
 
 
 
