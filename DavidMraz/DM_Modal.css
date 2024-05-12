@@ -1,5 +1,6 @@
 :root {
   --primary: #323ac0;
+  /* -- 는 CSS에서 변수를 정의할 때 사용하는 구문 */
   --text: #252728;
   --headline: #1a1e1f;
   --gray-text: #6d7679;
@@ -104,7 +105,7 @@ ease-in-out : 애니메이션 효과는 천천히 시작하고 천친히 끝남
 */
 
 .share-btn:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 18px;
+  box-shadow: rgba(149, 157, 165, 0.6) 0px 6px 18px;
 }
 
 .share-btn svg {
@@ -154,6 +155,24 @@ stoke-dasharray : 외곽선 점선
   border: none;
   background: var(--white);
 }
+
+
+/* 추가 코드 */
+.copy-link-dialog--fadeout {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  transition: all 0.9s ease-in-out;
+}
+/* 
+copy-link-dialog--fadeout에서
+--는 BEM(Block Element Modifier) 방법론에서 modifier를 나타내는 관례적인 표기법입니다.
+
+BEM은 CSS 클래스 이를을 작성하는 패턴
+- Block : 독립적인 컴포넌트의 이름 (예: copy-link-dialog)
+- Element : 블록 내부의 자식 요소 이름 (예: copy-link-dialog__content)
+- Modifier : 블록이나 요소의 상태나 스타일 변형을 나타내는 이름(예: copy-link-dialog--fadeout)
+*/
 
 .copy-link-dialog header {
   display: flex;
