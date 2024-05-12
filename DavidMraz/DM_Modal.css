@@ -136,6 +136,12 @@ stoke-dasharray : 외곽선 점선
   height: 1.75rem;
   width: 1.75rem;
 }
+/* 
+.close-btn svg 는 클래스 내부의 모든 svg요소를 선택
+
+.close-btn>svg 는 직계 자식 요소인 svg요소만 선택
+*/
+
 
 
 .copy-link-dialog {
@@ -194,6 +200,11 @@ stoke-dasharray : 외곽선 점선
   background: var(--primary);
   color: var(--white);
 }
+
+/* 
+::selection은 CSS 가상요소(pseudo-element)중 하나로 , 사용자가 텍스트를 드래그 하여 선택하였을때 적용되는 스타일을 정의
+*/
+
 
 .copy-link-dialog h2 {
   font-size: 2rem;
