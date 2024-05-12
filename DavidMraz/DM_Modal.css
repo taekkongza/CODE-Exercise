@@ -81,13 +81,49 @@ body {
   border: none;
 }
 
+/* 
+box-shadow : 
+offset-X : 수평방향 그림자위치, 양수값 - 오른쪽
+offset-y : 수직방향 그림자취치, 양수값 - 아래쪽
+Blur-Radius : 그림자의 흐림정도. 값이 클수록 흐려짐.
+Spread-Radius : 그림자 크기를 지정. 양수값은 그림자 확대
+Color: 그림자 색상을 지정
+rgba(149, 157, 165, 0.2) 투명도 20%
+
+transition:
+요소의 속성값이 변경될 때 애니메이션 효과를 적용할 수 있습니다.
+1. Property: 애니메이션 효과를 적용할 속성을 지정합니다. 여러개의 속성을 지정할 수 있음
+2. Duration : 애니메이션 효과 지속시간
+3. Timing-Function: 에니메이션 효과의 가속도 곡선을 지정
+4. Delay: 애니메이션 효과가 시작되기 전의 지연시간을 지정
+trasition : all 0.2s ease-in-out;
+all : 모든 속성에 대해 애니메이션 효과
+0.2s : 애니메이션 지속시간 0.2초
+ease-in-out : 애니메이션 효과는 천천히 시작하고 천친히 끝남
+
+*/
+
 .share-btn:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 18px;
 }
 
 .share-btn svg {
   stroke: var(--primary);
 }
+
+
+/* 
+SVG(Scalable Vector Graphics) 파일에서 stroke는 도형의 외곽선을 정의하는 속성
+
+stroke : 도형의 외과선 색상
+stroke-width : 외곽선 두께
+stroke-linecap : 선의 끝모양
+stroke-linejoin : 선이 꺽이는 부분의 모양을 지정
+stoke-dasharray : 외곽선 점선
+
+*/
+
+
 
 .close-btn {
   background: inherit;
