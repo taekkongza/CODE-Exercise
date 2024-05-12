@@ -2,21 +2,21 @@ console.log('---------------');
 console.log('1. String concatenation');
 
 // 1. String concatenation
-console.log('my'+'cat');
-console.log('1'+ 2);
-console.log(`string literals: 1 + 2 = ${1 + 2}`);
+console.log('my'+'cat');  // mycat
+console.log('1'+ 2);  // 12 
+console.log(`string literals: 1 + 2 = ${1 + 2}`);  // 3
 
 
 console.log('');
 console.log('---------------');
 console.log('2. Numeric operators');
 // 2. Numeric operators
-console.log(1 + 1); //add
+console.log(1 + 1); //add      
 console.log(1 - 1); // substract
 console.log(1 / 1); // divide
 console.log(1 * 1); // multiply
-console.log(5 % 2); // remainder
-console.log(2 ** 3); // exponentiation
+console.log(5 % 2); // remainder  1
+console.log(2 ** 3); // exponentiation  8
 
 
 console.log('');
@@ -31,11 +31,11 @@ const preIncrement = ++counter;
 // counter = counter + 1
 // preIncrement = counter
 // 1을 더한후 변수에 할당
-console.log(`preIncrement: ${preIncrement}, counter: ${counter}`);
+console.log(`preIncrement: ${preIncrement}, counter: ${counter}`);  // 3 3
 
 // postIncrement
 const postIncrement = counter++;
-console.log(`postIncrement: ${postIncrement}, counter: ${counter}`);
+console.log(`postIncrement: ${postIncrement}, counter: ${counter}`); // 3 4
 // postIncrement = counter
 // counter = counter + 1
 // 변수에 할당한후 1을 더한다.
@@ -43,11 +43,11 @@ console.log(`postIncrement: ${postIncrement}, counter: ${counter}`);
 // preDecrement
 // 1뺀후 변수에 할당
 const preDecrement = --counter;
-console.log(`preDecrement: ${preDecrement}, counter: ${counter}`);
+console.log(`preDecrement: ${preDecrement}, counter: ${counter}`); // 3 3
 // postDecrement
 // 변수에 할당후 1을 뺀다
 const postDecrement = counter--;
-console.log(`postDecrement: ${postDecrement}, counter: ${counter}`);
+console.log(`postDecrement: ${postDecrement}, counter: ${counter}`);  // 3 2
 
 
 console.log('');
@@ -129,12 +129,12 @@ const stringFive = '5';
 const numberFive = 5;
 
 // == loose equality, with type conversion
-console.log(stringFive == numberFive);
-console.log(stringFive != numberFive);
+console.log(stringFive == numberFive);  // true
+console.log(stringFive != numberFive);  // false
 
 // === strict equality, no type conversion
-console.log(stringFive === numberFive);
-console.log(stringFive !== numberFive);
+console.log(stringFive === numberFive);  // false
+console.log(stringFive !== numberFive);  // true
 
 
 console.log('---------------');
@@ -142,9 +142,9 @@ console.log('---------------');
 const ellie1 = { name: 'ellie' };
 const ellie2 = { name: 'ellie' };
 const ellie3 = ellie1;
-console.log(ellie1 == ellie2);
-console.log(ellie1 === ellie2);
-console.log(ellie1 === ellie3);
+console.log(ellie1 == ellie2); // false
+console.log(ellie1 === ellie2); // false
+console.log(ellie1 === ellie3); // true
 
 console.log('---------------');
 console.log(0 == false); //true
