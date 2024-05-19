@@ -163,6 +163,8 @@ console.log('-----------------------------------------');
 // a function expression is created when the execution reaches it.
 
 // function expression은 호이스팅이 된다.
+// 함수로 선언된것을 제일 위로 올려준다.
+
 
 // 함수에 이름이 없는것 function(){} -- anonymous function
 const print = function(){
@@ -185,15 +187,15 @@ function randomQuiz(answer, printYes, printNo){
   }
 }
 
-
 // anonymous function
 const printYes = function(){
   console.log('yes!');
 };
 
 // named function
-// better debugging in debugger's stack traces
-// recursions - 함수 안에서 함수 자신을 다시 호출 
+// 1. better debugging in debugger's stack traces
+// 2. recursions - 함수 안에서 함수 자신을 다시 호출 , 사용하면 안되지만 정말 필요할때만 사용한다.
+// call stack?? 다음에
 const printNo = function print(){
   console.log('no!');
   // print(); // recursion
@@ -205,16 +207,18 @@ randomQuiz('love you',printYes, printNo);  // yes!
 
 // 3. Arrow function
 // always anonymous function
+// 목적 - 간결한 함수 
 const simplePrint = function (){
   console.log('simplePrint');
 };
 simplePrint();
 
+// { } 블럭도 빼고 간결하다.
 const simplePrint1 = () => console.log('simplePrint');
 simplePrint1();
+
 const add = (a, b) => a + b;
 console.log(add(4, 9));
-// { } 블럭도 빼고 간결하다.
 
 // 복잡한경우는 { }을 추가, 대신 return을 꼭 추가해야 한다.
 const simpleMultiply = (a, b) => {
@@ -223,12 +227,74 @@ const simpleMultiply = (a, b) => {
 };
 console.log(simpleMultiply(3, 8));
 
+// IIFE: Immediately Invoked Function Expression
+(function hello(){
+  console.log('IIFE');
+})();
+// 바로 호출
 
 
 
+//Fun quiz time
+//function calculate(command, a, b);
+//command: add, substract, divide, multiply, remainder
 
 
+const coms = ['add', 'subtract','divide','multiply','remainder'];
 
+const cal = (com, a, b) => {
+  if (!(coms.includes(com) && typeof a === "number" && typeof b === "number")){
+      return "wrong input";
+    } 
 
+  switch (com){
+    case 'add':
+      return a + b;
+    case 'subtract':
+      return a - b;
+    case 'divide':
+      return a / b;
+    case 'multiply':
+      return a * b;
+    case 'remainder':
+      return a % b;
+    default:
+      return 'unknown operation'
 
+  }
+}
+
+try {
+  console.log(cal('add', 1, 2));
+  console.log(cal('multiply', 3, 5));
+  console.log(cal('subtract', 5, 3));
+  console.log(cal('divide', 15, 3));
+  console.log(cal('remainder', 15, 8));
+  console.log(cal('add1',1,2));
+  console.log(cal('add1','1',2));
+  console.log(cal('add', a, 2));
+} catch (error){
+  console.log('Error', error.message);
+}
+
+//---------------------------------------
+// Dream coding answer
+
+function calculate(command, a, b){
+  switch(command){
+    case 'add':
+      return a + b;
+    case 'subtract':
+      return a - b;
+    case 'divide':
+      return a / b;
+    case 'multiply':
+      return a * b;
+    case 'remainder':
+      return a % b;
+    default:
+      throw Error('unknown command');  
+  }
+}
+console.log(calculate('add', 10, 7));
 
