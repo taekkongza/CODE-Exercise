@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  /* for Dark theme */
+  /* background-color: hsla(209 70% 3% / 100%); */
+  background-color: hsl(214, 20%, 85%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  text-decoration: none;
+  width: 5.625rem;
+  height: 5.625rem;
+  border-radius: 14px;
+  /* For dark theme */
+  /* background-color: hsla(209 20% 70%/20%); */
+  background-color: #fff;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* 
+  overflow 속석은 요소의 콘텐츠가 요소의 상자(box) 크기를 벗어났을때 처리방법 지정
+
+  1. visible - 경계가 넘어서는 콘텐츠 보임
+  2. hidden - 숨김
+  3. scroll - 스크롤바 제공
+  4. auto - 필요하면 스크롤바 표시
+  5. scrollbar - 항상 스크롤바
+  6. inherit - 부모요소 상속
+  */
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  /* 
+  그람자 여러개 설정 가능함 
+  box-shadow : 수평이동값 수직이동값 흐림정도 확장정도 색상 , ...
+  */
+}
+
+.icon > i {
+  color: #2dd4bf;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.icon:hover > i {
+  scale: 1.2;
+  color: #f1f1f1;
+}
+
+.icon::before {
+  background: var(--color);
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  left: -110%;
+  top: 80%;
+  transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
