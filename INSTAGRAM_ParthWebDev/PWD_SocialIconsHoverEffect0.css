@@ -76,10 +76,51 @@ body {
   transform: rotate(45deg);
 }
 
+.icon:hover::before {
+  animation: slide 0.7s forwards;
+}
+/* forwards : 애니매에션이 끝나도 마지막 프레임 유지 */
 
+@keyframes slide {
+  50% {
+    left: 10%;
+    top: -40%;
+  }
 
+  100% {
+    left: -15%;
+    top: -15%;
+  }
+}
 
+/* 
+:has(  )
+자식요소 중에 특정 클래스나 id를 가진 요소가 있는지 확인하는 선택자 입니다.
 
+*/
+
+/* 
+.icon .fa-instagram: 직계 자식 요소만 타겟팅
+.icon > .fa-instagram: 단일 직계 자식 요소만 타겟팅
+.icon:has(.fa-instagram): 안에 fa-instagram 클래스가 있는 요소가 있으면 타겟팅
+
+*/
+.icon:has(.fa-instagram) {
+  --color: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.icon:has(.fa-linkedin-in) {
+  --color: #0077b5;
+}
+.icon:has(.fa-youtube) {
+  --color: #ff0000;
+}
+.icon:has(.fa-x-twitter) {
+  --color: #1da1f2;
+}
+.icon:has(.fa-github) {
+  --color: #333;
+}
 
 
 
