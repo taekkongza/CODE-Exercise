@@ -1,24 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/*
+@import 키워드는 외부 CSS 파일을 현재 CSS 파일에 가져오는데 사용
+
+@import url("https:// ...    ");
+*/
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  /* 
+  border-box  요소의 너비와 높이 계산시 
+  콘텐츠 영억뿐만 아니라 패딩과 테두리까지 포함 합니다.
+  */
   margin: 0;
   padding: 0;
 }
 
 body {
   font-family: "Poppins",sans-serif;
-  min-height: 100vh;
+  min-height: 100vh;  /*vh - viewport height*/
   background-color: #051215;
   display: grid;
   place-items: center;
   color: white;
 }
 
+/*
+place-items: center
+1. start  grid 왼쪽 상단 모서리
+2. end    gird 우측 하단 모서리
+3. center 그리드 중앙에 배치
+4. stretch 그리드의 전체 너비와 높이로 확장
+*/
+
+
 .btn {
   all: unset;
+  /
   font-size: 18px;
   padding: 0.8rem 3rem;
   background-color: #fefefe;
@@ -32,6 +53,8 @@ body {
   z-index: 0;
   cursor: pointer;
 }
+
+
 
 .btn::before,
 .btn::after {
