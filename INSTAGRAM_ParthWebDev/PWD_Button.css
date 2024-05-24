@@ -39,18 +39,29 @@ place-items: center
 
 .btn {
   all: unset;
-  /
+  /*
+  all: unset - 모든 기본 스타일을 초기화 합니다.
+  즉 요소에서 기본으로 적용된 모든 브라우저 스타일을 제거합니다. 
+  */
   font-size: 18px;
   padding: 0.8rem 3rem;
   background-color: #fefefe;
   color: black;
   line-height: 1.5;
+  /* 텍스트 줄 높이를 1.5로 설정 */
   font-weight: 600;
   border: 2px solid white;
   border-radius: 1000px;
   position: relative;
   overflow: hidden;
+  /* 요소의 경계를 넘어가는 내용이 보이지 않도록 설정
+  일반적으로 둥근 버튼 모양을 유지하기 위해 사용*/
   z-index: 0;
+  /*  Z-index 는 요소의 쌓임 순서를 결정, 기본값은 auto
+  숫자가 클수록 화면 앞으로 
+  - 팝업, 모달창, 드롭다운메뉴 - z-index:1000 또는 큰값
+  - 고정된 헤더나 푸티- z-index: 10 Ehsms 100정도
+  - 기타 중요한 레이러: 필요에 따라 z-index:1 에서 999사이 값을 사용 */
   cursor: pointer;
 }
 
@@ -62,19 +73,29 @@ place-items: center
   position: absolute;
   background: #000;
   background: hsl(191, 80%, 43%);
-  width: 100%;
+  width: 102%;
   height: 102%;
   pointer-events: none;
+  /*  가상 요소가 마우스 이벤트를 받지 않도록 설정. 
+  이로 인해 클릭 등 이벤트가 가상 요소가 아닌 부모소로 전달됩니다. */
   transform: skew(30deg) translateY(0);
+  /* 가상 요소를 30도 기울이고, Y축 방향으로 이동하지 않도록 설정
+  이는 가상 요소가 기울어지도록 합니다. */
   transition: transform 0.3s ease;
+  /* transform 속성이 변경될 때 0.3초 동안 부드럽게 애니매이션 */
   z-index: -1;
+  /* 가상요소 쌓임 순서를 -1로 설정하여 부모 요소 뒤에 표시되도록 합니다. */
 }
 
 
+
 .btn::before {
-  --direction: 1;
+  --direction: 1; 
+  /*  CSS변수 --direction을 1로 설정 */
   top: -103%;
+  /* ::before 요소의 상단위치를 버튼 상단보다 103% 위로 설정 */
   left: -70%;
+  /* ::before 요소의 좌측 위치를 좌측보다 70% 좌측으로 설정 */
 }
 
 .btn::after {
@@ -86,32 +107,89 @@ place-items: center
 .btn:hover::before,
 .btn:hover::after {
   transform: skew(30deg) translateY(calc(var(--direction) * 100%));
+  /*  요소를 30도 기울이고 --direction 변수 값에 따라 Y축을 100% 
+  이동시킵니다. --direction이 1일때는 아래로 , -1일때는 위로 이동합니다.  
+  */
 }
+
+
+/* 
+# translateY 
+CSS transform 속성의 한부분으로 요소를 Y축(수직방향)으로 이동하는데 사용.
+단위는 px % em 등 다양한 단위 사용할 수 있다.
+
+문법
+transform: tranlateY(<length - percentage>);
+
+예시
+.element {
+  transfom: translateY(50px) - 요소를 아래로 50px 이동 
+}
+
+# calc
+CSS에서 동적계산을 수행할 수 있게 해주는 함수
+고정된 값이 아닌, 다른 값들 간의 계산 결과를 사용할 수 있게 합니다.
+
+문법
+property: calc(expression);
+
+예시
+.element {
+  width: calc(100%-50px); - 부모요소 너비에서 50px 뺀값
+}
+특징 - calc 는 + - * / 연산자 사용 가능
+      다양한 단위 간의 계산을 지원, 예를 들어 px 과 % 혼합해서 사용가능
+      요소의 크기 , 위치, 마진, 패딩 등 다용한 속성에 사용 가븡
+}
+*/
+
+
+
 
 .text-container {
   display: block;
   overflow: hidden;
   position: relative;
+  /*  자식 요소의 기준점을 제공
+  text-container의 위치를 기준으로 자식 요소를 배치 */
 }
 
 .text {
   display: block;
   transition: 0.3s;
+  /* 텍스트에 0.3초 동안의 전환 효과를 적용 */
 }
 
 .btn:hover .text:nth-child(1) {
   color: white;
   translate:0 80%;
 }
+/* 버튼이 호버 상태일때 첫번째 텍스트 요소에 대한 스타일정의
+tranlate:0 80%; 는 텍스트를 X축으로 0 , Y축으로 80% 이동 */
+
+
 .text:nth-child(2) {
   color: white;
   position: absolute;
   inset: 0;
   translate: 0 -80%;
 }
+/*  두번째 텍스트 요소에 대한 기본 스타일
+position: absolute; --- text.container를 text:nth-child(2)에서 기준점으로 사용
+inset: 0;    텍스트가 상위 요소의 모든면으로부터 0의 간격을 가지도록 설정
+-- top:0, right:0 , bottom:0, left:0 와 동일한 효과
+
+
+
+*/
+
 
 .btn:hover .text:nth-child(2) {
   transition-delay: 0.1s;
   translate: 0 0;
 }
+/* 
+transition delay 는 전환 효과에서 0.1 초 지연시간 설정
+translate: 0 0; 텍스트를 원래 위치로
 
+*/
