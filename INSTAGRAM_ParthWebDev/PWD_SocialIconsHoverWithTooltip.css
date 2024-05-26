@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins",sans-serif;
+  place-items: center;
+  background: linear-gradient(315deg, #C6AE7A, #79684E);
+  /* background-color: rgb(34, 34, 33); */
+}
+
+.wrapper{
+  display: inline-flex;
+  list-style: none;
+}
+/* 
+
+flex 
+블록 레벨 요소로 간주됩니다.
+블록 레벨 요소처럼 동작하며, 기본적으로 수직으로 배치, 가로너비가 부모 요소에 맞게 확장.
+위에서 아래로 쌓임
+
+inline-flex
+인라인 레벨 요소로 간주
+인라인 요소 처럼 동작하여, 다른 인라인 요소들과 함께 한 줄에 배치
+가로 너비는 자식 요소의 내용에 맞게 조절
+
+*/
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* 
+
+  타이밍 함수 (Timing Function)
+  애니메이션 진행속도를 정의
+
+  cubic-bezier함수
+  베지어곡선(Bezier curve)을 사용하여 타이밍 함수를 정의합니다. 이 함수는 네개의 숫자 값을 인수로 받습니다.
+  각 숫자는 0과 1 사이의 값이어야 하며, 이 값들은 곡선의 제어점을 정의합니다.
+
+  Cubic Bezier Curve (https://cubic-bezier.com/)
+
+  */
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  /*
+  - opacity 속성은 불투명도를 제어
+  - 0 완전투명 , 1 완전불투명
+  - 0 요소가 보이지 않음. 하지만 해당 요소는 여전히 문서에 존재 공간을 차지
+
+  - transition과 같이 사용 fade-in, out 효과 구현
+  - opacity:0 는 visiblity: hidden보다 효율적.
+  렌더링을 아예 하지 않음
+  = 즉 요소의 투명도를 제어하고 애니메이션 효과를 만들때 사용
+
+  -- display: none; 과 다름
+  -- 화면에 존재하지만 보이지 않는 상태 만들고 싶으면 display none을 사용
+  */
+  
+  pointer-events: none;
+  /*
+  pointer-events 
+  요소가 포인터 이벤트(클릭, 호버, 드래그 등)에 반응하는 방식을 제어
+  1. pointer-events: none; 
+    해당 요소에서 포인터 이벤트가 발생하지 않습니다.
+    마우스 클릭, 호버, 드래그 등의 상호 작용이 무시됩니다.
+    단, 자식 요소에 pointer-events 속성이 별도로 지정되어 있다면 그 자식 요소는 영향을 받지 않습니다.
+  2. pointer-events: auto; 
+    기본값으로 일반적으로 포인터 이벤트에 반응
+  3. pointer-events: inherit;
+    부모 요소의 pointer-events 값을 상속받습니다.
+
+  다음과 같은 경우 유요
+  - 특정 요소에서 클릭 이벤트를 비활성화 하고 싶을때
+  - 요소 위에 다른 요소가 겹쳐 있어도 하위 요소만의 이벤트를 작동 시키고 싶을때
+  - 애니메니션 효과 중에 일시적으로 이벤트를 비활성화 하고 싶을때
+  */
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absoulte;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+/* 
+# Transform
+transform 속성은 요소의 위치, 크기, 회전 등을 변형
+2D 3D 변형 가능함
+  - translate(x, y) 요소를 x, y 만큼 이동
+  - rotate(deg) 요소를 시계방향 deg 각도만큼 회전
+  - scale(x, y) 크기를 x, y 배율로 확대, 축소
+  - skew(x-deg, y-deg) 요소를 x, y 각도 만큼 기울인다.
+  
+  translate
+  translate(x, y) 함수는 요소를 x, y만큼 이동
+  단위는 px, %, em 등을 사용
+  - translate(50%, 50%) 요소 가로 세로 50% 이동
+  
+  rotate
+  rotate(deg) 함수는 요소를 deg 각도만큼 회전
+  양수는 시계 방향,
+  음수는 반시계 방향
+  - rotate(45deg) 요소 45도 회전
+  
+  transition
+  transition속성은 CSS속성 값이 변경될 때 애니메이션 효과를 적용
+  - transition: property duration timing-function delay;
+  - property 애니메이션 적용할 CSS속성
+  - timing-function 애니메이션 가속도 곡선(... cubic-bezier(_ , _ , _ , _)
+  
+  
+ 
+*/
+
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.facebook {
+  --color: #1877f2;
+}
+
+.twitter {
+  --color: #1da1f2;
+}
+
+.instagram {
+  --color: #e4405f;
+}
+
+.github {
+  --color: #333333;
+}
+
+.youtube {
+  --color: #cd201f;
+}
+
+.icon:hover,
+.icon:hover .tooltip,
+.icon:hover .tooltip::before {
+  background: var(--color);
+  color: white;
+}
+
+
+
+/* 
+############## Block은 상자 크기 , Inline은 내용 #############
+*/
+
+
+/* 
+
+블록 레벨 요소 (Block - Level Elements)
+특징
+1. 전체 너비를 차지
+  블록 레벨 요소는 기봊넞그초 부모 요소의 가로 너비 저체를 차지
+  다른 블록 레벨 요소는 새로운 줄에서 시작
+2. 새로운 줄에서 시작
+3. 크기 조정
+  너비(width) 높이(height) 을 설정
+4. 여백과 패딩 적용
+  여백(margin) 패딩(padding)
+
+Ex>
+<div> , <h1> ~ <h6> , <p> . <ul> , <ol> , <li> , <section> , <header> , <footer>
+
+
+인라인 요소 (Inline Elements)
+특징
+1. 내용만큼 너비 차지
+2. 같은 줄에 배치
+  인라인 요소는 다른 인라인 요소들과 같은 줄에 나란히 배치.
+  따라서 여러 인라인 요소들이 한 줄에 배치될 수 있습니다.
+3. 크기조정 제한
+  인라인 요소는 일반적으로 너비(width)와 높이(height)를 설정할 수 없습니다.
+  브라우저가 자동으로 크기를 조정합니다.
+
+Ex>
+<span> , <a> , <strong> , <em> , <img> , <label> , <br>
+
+*/
