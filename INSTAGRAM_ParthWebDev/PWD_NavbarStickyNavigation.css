@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #080a0d;
+  color: #d4dbe4;
+}
+
+#header {
+  height: 100vh; /* 뷰포트 높이의 100%로 설정 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20px;  /* 좌우(padding-inline) 패딩을 각각 20px로 설정 */
+  position: relative;
+  text-align: center; /* 텍스트를 중앙에 정렬 */
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: 10px;  /* 글자 간격 10px */
+  text-transform: uppercase; /* 텍스트를 모두 대문자로 변환 */
+  margin-bottom: 20px; /* 아래쪽 마진을 20px */
+}
+
+p {
+  font-size: 18px;
+  letter-spacing: 5px; /* 글자 각격 5px */
+}
+
+.tabs-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: #121922;
+  box-shadow: 0 0 20px rgba(111, 111, 111, 0.2);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.tabs-container a {
+  text-decoration: none;  /* 텍스트 장식 제거 */
+  color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;    
+  /* 각 요소가 동일한 비율로 공간을 차지 */
+  /* flex 세가지 하위 속성의 단축 속성
+
+flex: 1은 CSS에서 flexbox 레이아웃을 사용할 때 자주 사용되는 속성으로, flex 컨테이너 내의 flex 아이템이 남은 공간을 어떻게 분배할지 결정하는 역할을 합니다. 간단히 말하면, flex 아이템들이 남은 공간을 서로 공평하게 나눠 가질 수 있도록 하는 속성이라고 생각하면 됩니다.
+
+flex: 1은 실제로 세 가지 속성의 단축형으로 구성됩니다.
+
+flex-grow: flex 컨테이너에 여유 공간이 생겼을 때, 해당 아이템이 다른 아이템들에 비해 얼마나 많이 성장할지를 결정합니다. 값이 1이면 다른 아이템들과 동일한 비율로 성장한다는 의미입니다.
+flex-shrink: flex 컨테이너가 축소되고 모든 아이템들을 담을 공간이 부족해졌을 때, 해당 아이템이 다른 아이템들에 비해 얼마나 많이 축소될지를 결정합니다. 값이 1이면 다른 아이템들과 동일한 비율로 축소한다는 의미입니다.
+flex-basis: flex-grow와 flex-shrink를 적용하기 전에 아이템의 기본 크기를 설정합니다. 기본값은 아이템의 콘텐츠 크기와 같습니다.
+flex: 1 사용 예시:
+
+flex 컨테이너가 있고, 각 아이템에 flex: 1을 설정했다고 가정해봅시다. 컨테이너에 충분한 공간이 있다면 각 아이템은 컨테이너 너비의 1/3를 차지하게 됩니다. 하지만 컨테이너가 축소되면 아이템들은 동일한 비율로 축소되어 각각의 크기 비율을 유지하게 됩니다.
+
+  flex: 1; 
+
+
+
+
+  */
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.tabs-container a:hover {
+  background-color: #4c79bd;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
