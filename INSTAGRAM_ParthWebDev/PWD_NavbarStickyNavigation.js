@@ -42,7 +42,7 @@
 
   window.addEventListener("scroll", function(){
   // window 현재 부라우저 창 또는 탭
-  // "scroll" 사용자가 페이지를 스크롤 할때 발생하는 이벤ㅌ,
+  // "scroll" 사용자가 페이지를 스크롤 할때 발생하는 이벤트
     if (window.scrollY >= offset){
       // window.scrollY 현재 스크롤 위치.
       //                페이지 상단에서부터의 수직 픽셀값을 반환
