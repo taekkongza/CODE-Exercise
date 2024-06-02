@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--반응형 웹을 위한 뷰포트 설정-->
   <title>Dropdowns</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><!-- Font Awesome 아이콘을 사용흘 위한 스타일시트 링크-->
   <link rel="stylesheet" href="./PWD_Dropdowns.css">
-  <script src="./PWD_Dropdowns.js" defer></script>
+  <script src="./PWD_Dropdowns.js" defer></script> <!-- 외부 JS파일 링크(defer속성으로 문서가 로드된후 실행)-->
 </head>
 <body>
-  <div id="dropdown">¬ø
-    <button class="dropdown-toggle">
-      <span>Menu</span>
-      <i class="fa-solid fa-caret-down"></i>
+  <div id="dropdown"> <!-- 드롭다운 메뉴 컨테이너 -->
+    <button class="dropdown-toggle">   <!-- 드롭다운 토글 버튼 -->
+      <span>Menu</span> 
+      <i class="fa-solid fa-caret-down"></i> <!-- Font Awesome 아이콘 사용 -->
     </button>
     
-    <ul class="menu">
+    <ul class="menu">  <!-- 메뉴 리스트 -->
       <li class="menu-item"><a href="#">Italian</a></li>
       <li class="menu-item"><a href="#">Chinese</a></li>
-      <li class="menu-item dropdown">
+      <li class="menu-item dropdown"> <!-- 서브 메뉴를 포함하는 메뉴 아이템-->
         <a href="#" class="submenu-toggle">
           <span>Healthy Options</span>
-          <i class="fa-solid fa-caret-right"></i>
+          <i class="fa-solid fa-caret-right"></i> <!-- Font awesome아이콘 사용 -->
         </a>
-        <ul class="submenu">
+        <ul class="submenu"> <!-- 서브 메뉴 리스트 -->
           <li class="submenu-item"><a href="#">Vegetarian</a></li>
           <li class="submenu-item"><a href="#">Vegan</a></li>
           <li class="submenu-item"><a href="#">Gluten-Free</a></li>
         </ul>
       </li>
       <li class="menu-item"><a href="#">Maxican</a></li>
-      <li class="menu-item dropdown">
+      <li class="menu-item dropdown"> <!-- 서브메뉴를 포함한 메뉴 아이템 -->
         <a href="#" class="submenu-toggle">
           <span>Specials</span>
           <i class="fa-solid fa-caret-right"></i>
