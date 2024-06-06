@@ -23,7 +23,7 @@ body {
 button,
 li,
 a {
-  all: unset;
+  all: unset;   /* 스타일 초기화 */
   box-sizing: border-box;
 }
 
@@ -31,6 +31,15 @@ a {
 #dropdown {
   --border-radius: 6px;
   --shadow-color: 60deg 13% 61%;
+  /* 
+  --shadow-color : 60deg 13% 61%;
+  HSL 색상 모델로 지정하는 CSS 변수이다.
+
+  Hue(색상) Saturation(채도) Lightness(명도)
+  Hue 색상환 0도 ~ 360도, 0도 빨강, 60도 노란색, 120도 초록  240 파란색
+  Saturation 0% 회색 100% 가장 선명한색
+  Lightness 색상의 밝기 0% 검정 100% 흰색  
+  */
 
   max-width: 220px;
   width: 100%;
@@ -40,6 +49,14 @@ a {
   box-shadow: 0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.3),
     2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.3),
     5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.3);
+    /*
+    x-offset 양수 오른쪽
+    y-offset 양수 아래
+    blur-radius 클수록 그림자가 더 흐려짐
+    spread-radius 양수 그림자 확장
+    색상 hsl(.../0.3) 투명도 30%
+    */
+
 }
 
 
