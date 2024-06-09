@@ -34,7 +34,10 @@ function print(person){
   console.log(person.age);
 }
 const ellie = { name:'ellie', age: 4};
-print(ellie);
+print(ellie); 
+// ellie 
+// 4
+
 
 // runtime : 프로그램이 동작할때
 
@@ -48,8 +51,9 @@ console.log(ellie.hasJob);  // undefined
 
 // 2. Computed properties
 // object key - key는 항상 ' ' string type으로 해야 한다.
-console.log(ellie.name);
-console.log(ellie['name']);
+console.log(ellie.name); // ellie
+console.log(ellie['name']); // ellie
+
 // 배열에서 받아 접근할 수 있다.
 console.log(ellie.hasJob); // undefined
 ellie['hasJob'] = true;
@@ -63,8 +67,8 @@ function printValue(obj, key){
   // console.log(obj.key); // undefined
   console.log(obj[key])
 }
-printValue(ellie, 'name'); //????
-printValue(ellie, 'age');
+printValue(ellie, 'name'); // ellie
+printValue(ellie, 'age'); // 4
 
 
 // 3. Property value shorthand
@@ -77,7 +81,7 @@ const person1 = { name: 'bob', age: 2};
 const person2 = { name: 'steve', age: 3};
 const person3 = { name: 'dave', age: 4};
 const person4 = makePerson('ellie', 30);
-console.log(person4);
+console.log(person4); // {name: 'ellie', age: 30}
 
 // 4. Constructor function
 function Person(name,age){
@@ -87,28 +91,32 @@ function Person(name,age){
   // return this;
 }
 const person5 = new Person('mike', 22);
-console.log(person5);
+console.log(person5); // Person {name: 'mike', age: 22}
 
 // 5. in operator : property existence check (key in obj)
 console.log('name' in ellie); // true
-console.log('age' in ellie);
-console.log('random' in ellie);
-console.log(ellie.random);
+console.log('age' in ellie); // true
+console.log('random' in ellie); // false
+console.log(ellie.random); // undefined
 
-console.clear();
+// console.clear();
 
-console.log(ellie);
+console.log(ellie); // {name: 'ellie', age: 30, hasJob: true}
 
 // 6. for ... in vs for ... of
+
 // for (key in obj)
 for (let key in ellie){
-  console.log(key);
+  console.log(key); 
+  // name
+  // age
+  // hasJob
 }
 
 // 좀더 strict하게 
 /*
 for ...in 구문:
-객체의 열거 가능한 속성을 반복
+객체의 열거 가능한 '속성' 을 반복
 객체의 모든 열거 가능한 속성, 즉 객체 자신의 속성과 프로토 타입 체인의 속성까지
 모두 열거합니다. 이로인해 예상치 못한 속성이 포함될 수 있습니다.
 이는 특히 객체가 다른 객체로부터 상속받은 속성을 가지고 있을때 문제가 될 수 있습니다.
@@ -124,18 +132,24 @@ for ...in 구문:
 for (let key in ellie){
   if (ellie.hasOwnProperty(key)){
     console.log(key);
+    // name
+    // age
+    // hasJob
   }
 }
  
 
-// for (value of iterable)
+// for ('value' of iterable)
 const array = [1, 2, 3, 4, 5];
 for (let i = 0; i < array.length; i++){
   console.log(array[i]);
+  // 1 2 3 4 5 
 }
+
 // 간편하게 for ... of 
 for (let value of array){
   console.log(value);
+  // 1 2 3 4 5 
 }
 
 
@@ -144,7 +158,8 @@ for (let value of array){
 const user = {name: "ellie", age: '20'};
 const user2 = user;
 user2.name = 'coder';
-console.log(user);
+console.log(user); // {name: 'coder', age: '20'}
+// user2는 user의 주소를 가리키고 있기 때문에 user와 user2는 값이 같이 변한다.
 
 // object를 내용을 복사하는 방법.
 
@@ -153,11 +168,22 @@ const user3 = {};  // 빈 object 설정
 for (let key in user){
   user3[key] = user[key];
 }
-console.log(user3);
-user2.name = 'ellie';
-console.log(user3);
-console.log(user2);
-console.log(user);
+console.log(user3); // {name: 'coder', age: '20'}
+
+console.log(user2); // {name: 'coder', age: '20'}
+
+console.log(user); // {name: 'coder', age: '20'}
+
+
+user2.name = 'ellie'; // user2 의 name을 ellie로 변경
+
+console.log(user3); // {name: 'coder', age: '20'}
+
+console.log(user2); // {name: 'ellie', age: '20'}
+
+console.log(user); // {name: 'ellie', age: '20'}
+
+
 // 새로운 방법...
 // Object.assign
 // javascript에 있는 모든 object는 Object를 상속한다.
@@ -165,10 +191,10 @@ console.log(user);
 // Object.assign(target, source1, source2)
 const user4 = {};
 Object.assign(user4, user);
-console.log(user4);
+console.log(user4); // {name: 'ellie', age: '20'}
 
 const user5 = Object.assign({}, user);
-console.log(user5);
+console.log(user5); // {name: 'ellie', age: '20'}
 
 // another example
 const fruit1 = { color: 'red'};

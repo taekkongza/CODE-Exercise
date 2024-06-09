@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opacity and Visibility Example</title>
+  <style>
+    .hidden {
+      opacity: 0;
+      visibility: hidden;  /* 애니메이션 영향 안받음 -> transition 필요없다...*/
+      /*visibility: visible; /* 애니메이션 영향받음 */
+      transition: opacity 2s ease;
+    }
+
+    .visible {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 2s ease;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggle">Toggle Visibility</button>
+  <div id="content" class="visible">This content will be hidden or shown
+  </div>
+
+
+  <script>
+    const button = document.getElementById('toggle');
+    const content = document.getElementById('content');
+
+    button.addEventListener('click',() => {
+      if (content.classList.contains('visible')){
+        content.classList.remove('visible');
+        content.classList.add('hidden');
+      } else {
+        content.classList.remove('hiddent');
+        content.classList.add('visible');
+      }
+    });
+  </script>
+  
+</body>
+</html>

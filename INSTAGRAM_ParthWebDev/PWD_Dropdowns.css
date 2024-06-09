@@ -75,10 +75,18 @@ a {
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
 }
-
 /*
+':is' 
+pseudoclass 는 여러개의 선택자를 그룹화 하여 
+하나 이상의 선택자와 일치하는 요소에 스타일을 
+적용할 수 있게 합니다. 
+':is' 를 사용하면 중복된 스타일 규칙을 줄일 수 있고,
+코드의 가독성을 높일 수 있습니다.
 
-
+:is(   )
+괄호 안에 있는 선택자 중 하나라도 일치하는 요소를 선택
+괄호안의 클래스가 있는 요소 중에서 부모의 첫번째 자신인
+요소에 스타일을 적용합니다.
 */
 
 :is(.menu-item, .submenu-item):last-child {
@@ -109,7 +117,9 @@ i {
 .dropdown-toggle.open > i {
   rotate: 180deg;
 }
-
+/* 
+dropdown-toggle 클래스가 open 클래스를 가지고 있을때 
+*/
 
 /* Menu and Submenu */
 .dropdown {
@@ -128,6 +138,51 @@ i {
   visibility: hidden;
   transition: all 0.3s ease;
 }
+
+/*
+opacity 와 visibility 는 모두 시각적 표현을 제어하지만
+그 방식과 결과는 다릅니다.
+
+opacity
+기능: 요소의 투명도를 설정
+값: 0 (완전히 투명) ~ 1 (완전히 불투명) 
+영향: 요소는 여전히 레이아웃에서 공간을 차지하지만, 눈에 보이지 않을 수 있습니다.
+이벤트: opacity가 0 인 경우에도 요소는 여전히 이벤트(예: 클릭)를 받습니다.
+애니메이션: 투명도 변화를 부드럽게 전환
+
+visibility
+기능: 요소의 가시성을 설정합니다.
+값: visible hidden
+영향: hidden 인 경우 공간을 차지하지만 눈에 보이지 않습니다.
+이벤트: hidden 인 경우 이벤틀를 받지 않습니다.
+애니메니션: 가시성 변화를 부드럽게 전환하기는 어렵습니다.
+
+display
+기능: 요소의 표시 여부를 설정
+값: none(표시 안함) block inline flex등
+영향: display: none; 인 경우 공간을 차지하지 않으며, 눈에 보이지 않습니다.
+이벤트: display: none; 인 경우 요소는 이벤틀ㄹ 받지 않습니다.
+애니메이션: display 속성은 애니메이션 하기 어렵습니다. 
+
+사용목적: 
+opacity: 0; 주로 요소의 가시성을 부드럽게 전환할때 사용하며,
+visibility: hidden;은 요소를 보이지 않게 하면서 이벤트를 비활성화 할때 사용
+
+
+opacity: 0;
+visibility: hidden;
+요소는 완전히 투명, 이벤트도 받지 않으며, 애니메이션 효과도 줄수 있습니다.
+
+
+
+
+
+
+*/
+
+
+
+
 
 .menu {
   width: 100%;
