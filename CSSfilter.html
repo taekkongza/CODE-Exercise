@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .example-image {
+            width: 300px;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1715083562482-57145dcb7588?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1MXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8');
+            background-size: cover;
+            background-position: center;
+            transition: filter 0.5s;
+        }
+
+        .blur {
+            filter: blur(5px);
+        }
+
+        .brightness {
+            filter: brightness(1.5);
+        }
+
+        .contrast {
+            filter: contrast(2);
+        }
+
+        .grayscale {
+            filter: grayscale(100%);
+        }
+
+        .hue-rotate {
+            filter: hue-rotate(90deg);
+        }
+
+        .invert {
+            filter: invert(100%);
+        }
+
+        .opacity {
+            filter: opacity(50%);
+        }
+
+        .saturate {
+            filter: saturate(2);
+        }
+
+        .sepia {
+            filter: sepia(100%);
+        }
+
+        .drop-shadow {
+            filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+        }
+    </style>
+    <title>CSS Filter Example</title>
+</head>
+<body>
+    <div class="example-image"></div><div>ORIGIN filter:</div><br>
+    <div class="example-image blur"></div><div>blur(5px)</div><br>
+    <div class="example-image brightness"></div><div>brightness(1.5)</div><br>
+    <div class="example-image contrast"></div><div>contrast(2)</div><br> 
+    <div class="example-image grayscale"></div><div>grayscale(100%)</div><br>
+    <div class="example-image hue-rotate"></div><div>hue-rotate(90deg)</div><br>
+    <div class="example-image invert"></div><div>invert(100%)</div><br>
+    <div class="example-image opacity"></div><div>opacity(50%)</div><br>
+    <div class="example-image saturate"></div><div>saturate(2)</div><br>
+    <div class="example-image sepia"></div><div>sepia(100%)</div><br>
+    <div class="example-image drop-shadow"></div><div>drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5)</div><br>
+</body>
+</html>

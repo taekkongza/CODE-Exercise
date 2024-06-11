@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap");
+
+/* Kanit 폰트를 import */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  height: 100vh;
+  background-color: #1e1e1e;
+  display: grid;
+  place-items: center;
+  /* CSS Grid사용하여 컨텐츠를 중앙에 배치 */
+  font-family: "Kanit", sans-serif;
+}
+
+div {
+  position: relative;
+  /* relative로 자식 엘레먼트가 이 위치를 기준으로 배치 */
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 80px;
+  cursor: pointer;
+}
+
+:root {
+  --clr: #1af7ff;
+}
+/* 색상 변수 정의 , hover-text외 관련된 스타일에서 사용*/
+/* 
+pseudo-class는 루트 요소에 스타일을 적용합니다.
+웹문서에서 루트요소는 가장 상위에 위치한 요소입니다.
+HTML문서에서는 <html> 태그가 루프 요소 역할을 합니다.
+
+루트 요소의 특징
+- 모든 요소를 포함. 
+- 독립적인 존재
+- 문서 구조의 기반. 루트 요소가 없이는 문서 구조가 성립하지 않습니다.
+
+루트 요소에 스타일을 적용하는 이유:
+- 전역 스타일을 설정하는 데 유용
+    문서 전체에 영향을 미치는 스타일을 정의할 수 있다.
+- 변수를 사용하여 동적으로 스타일을 변경
+    루트 요소에서 CSS변수를 정의하고, 다른 요소에서 해당 변수를 사용하여 스타일을 적용하면
+    코드를 더욱 간결하게 작성하고 유지 관리하기 쉬울수 있다.
+
+주의사항
+- 루트 요소에 스타일을 적요하면서 자식 요소에 이미 정의된 스타일을 재정의 할 수 있습니다.
+- 특정 요소에만 적용해야하는 스타일은 해당 요소에 직접 스타일을 정의하는 것이 좋습니다.
+*/
+
+.text {
+  color: transparent;
+  /*  텍스트 색상 투명  */
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  /* 흰색 반투명 외곽선  */
+  transition: 0.1s ease;
+  transition-delay: 0.25s;
+}
+/* 
+-webkit-text-stroke
+''텍스트에 외곽선''을 추가하기 위한 CSS속성
+웹킷 기반의 브라우저 (예: chrome, safari ) 에서 지원
+
+-webkit-text-stroke 는 두가지 속성 값
+1. 굵기(thickness) 외곽선 두께
+2. 색상(color)
+
+######
+text-shadow
+텍스트에 그림자를 추가
+대부분의 현대 브라우저에서 지원
+*/
+
+
+
+.hover-text {
+  position: absolute;
+  /* absolute로 배치, 부모 요소를 기준으로 위치 */
+  inset: 0;
+  /* top, right, bottom, left 모두 0으로 설정, 부모요소를 꽉채우는 크기로 설정 */
+  width: 0%;
+  /* 초기 너비 0 ,  텍스트가 보이지 않도록 합니다. */
+  color: var(--clr);
+  overflow: hidden;
+  /* 자식요소가 부모 요소의 범위를 벗어날 경우 보이지 않도록 합니다. */
+  border-right: 6px solid var(--clr);
+  /* 오른쪽에 6px 너비의 테두리 추가  */
+  transition: 0.5s ease-in-out;
+}
+
+div:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 60px var(--clr));
+  /* div에 마우스를 올렸을때 'hover-text' 너비를 100%로 확장
+  그림자 효과 추가 */
+  /* 
+  fileter: drop-shadow(0 0 60px var(--clr)); 는 CSS에서 요소에 그림자 효고하를 적용한는 방법
+  중 하나입니다. drop-shadow 필터는 요소 주위에 그림자를 생성하며, 다양한 그림자 설정을 통해
+  시각적 효과를 강화할 수 있습니다. 
+
+  filter - 그래픽 효과를 적용하는데 사용. 이미지나 요소의 외과을 변경하는 다양한 필터 함수를 지원
+
+  drop-shadow 요소 주위에 그림자를 추가하는 기능 .  
+      box-shadow 속성과 유사하지만, filter: drop-shadow 는 SVG 요소에도 적용할 수 있다.
+
+  filter: drop-shadow(offsetX offsetY blurRadius color);
+
+  ----------------------------------------------
+  filter 속성은 CSS에서 다양한 그래픽 효과를 적용
+  이미지, 텍스트, 컨테이너요소 등 다양한 요소의 외관을 변경
+
+  filter: none | <filter-function>
+  none 필터를 적용하지 않음
+  filter-function 적용할 필터 함수 지정. 여러개의 필터 함수를 공백으로 구분하여 연속해서 사용
+
+  1. blur(radius) : 흐림효과 , radius반경
+  2. brightness(amount) :  밝기 , amount는 밝기 배율, 1원래밝기, 0보다작은값어둡게, 1보다큰값밝게
+  3. contrast(amount) : 대비 , amount는 대비 배율, 1원래대비, 0보다작은값회색, 1보다가큰값은대비높임
+  4. grayscale(amount) : 흑백으로 변환, amount 흑백변환의 강도를 백분율로 지정 (0% 는 원래 색상, 100% 는 완전 흑백)
+  5. hue-rotate(angle) : 색상을 회전시켜 변환, angle은 색상의 회전 각도를 도 단위로 지정
+  6. invert(amount) : 생상 반전, amount 반전의 강도를 백분율로 지정(0% 원래 색상, 100%는 완전 반전)
+  7. opacity(amount) : 투명도, 백분율 , 0% 완전투명, 100% 완전 불투명
+  8. saturate(amount) : 채도, 채도의배율 , 1은 원래채도, 0은 회색, 1보다 큰값은 채도를 높임
+  9. sepia(amount) : 세피아(갈색톤) 효과를 적용, 세피아 효과의 강도를 백분율로 지정, 0% 원래색상, 100% 완전세피아
+  10. drop-shadow(offsetX offsetY blurRadius color) : 그림자 효과, 
+  */
+}
+
+div:hover .text {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
+  /* 기본 텍스트의 외곽선을 제거, 투명도 0 */
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Tab</title>
+  <link rel="stylesheet" href="./PWD_SlidingTabWithPureCss.css">
+</head>
+<body>
+  <h1>Sliding Tabs - Pure CSS</h1>
+  <div class="tabs">
+    <input type="radio" id="html" name="tabs" checked>
+    <label class="tab" for="html">HTML</label>
+
+    <!--
+    type="radio" : 라디오 버튼을 나타내는 input요소
+    id="html" : input요소의 고유한 식별자 , 라벨과 연결하는데 사용 for="html"
+    name="tabs" : 이 라디오 버튼이 속한 그룹을 지정. 여기서 모든 라디오 버튼은 "tabs"라는 그룹에 속합니다.\
+    checked : 이 속성은 기본적으로 해당 라디오 버튼이 선택되어 있음을 나타냄.
+    -->
+
+    <input type="radio" id="css" name="tabs">
+    <label class="tab" for="css">CSS</label>
+    
+    <input type="radio" id="javascript" name="tabs">
+    <label class="tab" for="javascript">Javascript</label>
+
+    <input type="radio" id="react" name="tabs">
+    <label class="tab" for="react">React</label>
+    
+    <span class="slider"></span>
+  </div>  
+</body>
+</html>
