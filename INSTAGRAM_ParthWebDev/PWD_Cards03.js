@@ -25,6 +25,6 @@ const swiper = new Swiper(".swiper", {
     clickable: true,
     // 페이지네이션 불릿을 클릭할 수 있다록 설정
     // pagination을 설정하고 클릭 가능하록 한다.
-  },
-});
+    },
+  });
 
