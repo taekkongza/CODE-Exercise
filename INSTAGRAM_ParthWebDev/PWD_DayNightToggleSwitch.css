@@ -14,9 +14,9 @@ body {
   align-items: center;
 }
 
-button {
+/* button {
   all: unset;
-}
+} */
 
 .toggle-switch {
   position: relative;
@@ -42,6 +42,40 @@ button {
 .slider:has(.checkbox:checked) {
   background-color: #69b0e7;
 }
+/* .slider요소 내부에 체크된 .checkbox가 있을때  */
+/* 
+:has(   ) 
+pseudo class 로 특정 조건을 만족하는 자식 또는 후손 요소를 포함하는 요소를 선택할 수 있게 합니다.
+-- 대부분의 브라우저에서 지원되지 않습니다. javascript를 사용해야함
+
+.slider:has(.checkbox.checked)
+의사 클래스 :has( ) 는 
+특정 요소가 자식 또는 후손 요소를 포함하는지 여부에 따라 
+스타일을 적용할 수 있도록 합니다.
+
+.checked는 체크 박스가 체크된 상태인지 확인함.
+
+-------------------
+javascript로 제어
+
+.slider.checked {
+ background-color: #69b0e7;
+}
+
+JS
+document.addEVentListener('DOMContentLoaded', () => {
+  const checkbox = document.querySelector('.checkbox');
+  const slider = document.querySelector('.slider');
+
+  checkbox.addEventListener('change',() => {
+    if (checkbox.checked){
+      slider.classList.add('checked');
+    } else { 
+      slider.classList.remove('checked');
+    }
+  });
+});
+*/
 
 .icon {
   content: "";
@@ -53,6 +87,7 @@ button {
   border-radius: 50%;
   background-color: #183153;
   box-shadow: inset 12px -4px 0px 0px #d8dbe0;
+  /* inset 내부 그림자 */
   transition: 0.4s ease;
 }
 
@@ -61,4 +96,63 @@ button {
   background-color: #ffd43b;
   box-shadow: none;
 }
+/* 
+.icon에만 변화
+
+CSS에서 + 연산자는 인접 형제 결합자(adjacent sibling combinator)입니다.
+이 결합자는 특정 요소의 바로 다음에 위치하는 형제 요소를 선택
+즉, 두 요소가 같은 부모 요소를 가지고 있어야 하면,
+첫번째 요소 바로 다음에 두번째 요소가 있어야 한다.
+
+----------------------------
+<div class="container">
+  <h1>제목</h1>
+  <p>첫 번째 문단</p>
+  <p>두 번째 문단</p>
+  <section>
+    <p>섹션 안의 문단</p>
+  </section>
+</div>
+
+
+
+CSS
+.container p {
+  color: blue;
+}
+자손 결합자 (Descendant Combinator) 
+공백으로 표시
+- .container 요소의 모든 자손 p 를 선택
+
+
+
+자식 결합자 (Child Combinator)
+> 기호로 표시
+특정 요소의 직접적인 자식 요소만 선택
+.container의 직접 자식인 p 요소만 선택           
+.container > p {
+  color: green;
+}
+
+
+
+인접 형제 결합자 (Adjacent Sibiling Combinator)
++ 로 표시
+특정 요소의 바로 다음에 위치한 형제 요소 선택
+모든 h1 요소 바로 다음에 오는 p 요소 선택
+h1 + p {
+  color: red;
+}
+
+
+일반 형제 결합자 (General Sibling Combinator)
+~ 로 표시
+특정 요소의 형제 요소 중 나열된 모든 요소를 선택
+모든 h1 요소의 형제 p 요소 모두 선택
+h1 ~ p {
+  color: purple;
+}
+
+
+*/
 
