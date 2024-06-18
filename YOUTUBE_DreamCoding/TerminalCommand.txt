@@ -1,0 +1,91 @@
+
+front end
+
+npm init
+npm install
+yarn run
+
+back end
+원격
+자동화 script
+debug
+
+# 개발자라면 알아야 하는 15가지 shell command
+
+category
+- Manual
+- Navigating file system
+- Create and manage file
+- Work with environment variable
+- Bonus
+
+----------------------------------------------
+# Unix          --> Linux, Mac OS , Windows(최근에 WSL windows subsystem for Linux 설치가 되어 있음)
+Bourne shell
+Bash
+zsh
+fish
+
+# Windows
+Powershell - object 개념, 다른 shell과 다르다. -- Unix 공용가능하게 aliases제공 
+cmd
+
+--------------------------------------------
+# iTerm2
+
+## Powershell
+-------------------------------------  Manual
+Unix
+# man           (manual)
+man man 
+q                (exit)
+
+## man
+powershell에서 get-help 를 연결하는 aliases
+
+# ## clear
+
+---------------------------------       Navigating file system
+# pwd
+print working directory
+
+## pwd
+= get-location
+
+------------------------------
+# ls
+현재 디렉토리 ,파일
+ls dir1
+ls -l          long
+ls -a          all  숨겨진것도
+ls -la   
+
+# open .         파일탐색기에서 열기
+
+## explorer .    파일탐색기에서 열기
+## ls
+= get-childitem
+ls
+ls dir1
+ls -name        이름만
+ls -force       숨겨진파일도
+
+---------------------------------
+# cd
+change directory
+
+cd dir1
+
+. 현재 경로
+.. 상위 경로
+cd .
+cd ..
+
+
+
+
+
+
+
+
+
