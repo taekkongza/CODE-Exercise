@@ -27,7 +27,7 @@ zsh
 fish
 
 # Windows
-Powershell - object 개념, 다른 shell과 다르다. -- Unix 공용가능하게 aliases제공 
+Powershell - object 개념, 다른 she ll과 다르다. -- Unix 공용가능하게 aliases제공 
 cmd
 
 --------------------------------------------
