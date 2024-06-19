@@ -194,14 +194,23 @@ grep -n "world" *.txt
 grep -ni "world" *.txt
 -i 대소문자 상관 없이 검색, insensitive
 
-grep -nir "world" *.txt
+grep -nir "world" .
 -r recurse 현재부터 하위폴더 전부 검색
 
 ## Select-string
+Select-string *.txt -pattern "world"
+
+-r recursive 옵션이 없다.
+
+select-string *, */* -pattern "world"
+     powershell은 기본적으로 대소문자를 구분하지 않는다.
+
+select-string *, */* -pattern "world" -CaseSensitive
+   대소문자 구분
 
 
 
-
+-------------------------------- Work with environment variables
 
 
 
