@@ -85,6 +85,40 @@ cd dir1
 cd .
 cd ..
 
+cd ~ 현재 사용자의 홈 경로, 최상위 경로로 이동
+cd - 이전 경로 이동
+
+## cd
+set-location 의 aliases 
+cd ~  = cd $home
+cd - 같은 명령어 
+     push-location 현재 디렉토리 저장
+     pop-location 저장된 디렉토리 이동
+
+------------------------------------------------
+# find
+특정 디렉토리 파일 찾음
+
+find . -type file -name "*.txt"
+현재 디렉토리 및 하위 디렉토리에서 모든 파일에서 텍스트 파일 이름을 찾아
+
+find . -type file -name "*.json"
+find . -type directory -name "*2"
+
+## get-childitem
+get-childitem -file -filter "*.txt" -recurse
+
+-----------------------------------------------
+# which
+사용하려는 프로그램이 어디에 설치 되어 있는지 설정되었는지
+which node
+which code
+
+## get-command
+get-command cmd.exe
+
+
+
 
 
 
