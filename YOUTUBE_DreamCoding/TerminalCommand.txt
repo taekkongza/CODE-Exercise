@@ -63,6 +63,10 @@ ls -la
 # open .         파일탐색기에서 열기
 
 ## explorer .    파일탐색기에서 열기
+--> 작동 안됨
+start .
+ii .
+
 ## ls
 = get-childitem
 ls
