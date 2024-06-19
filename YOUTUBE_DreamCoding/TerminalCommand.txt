@@ -114,8 +114,96 @@ get-childitem -file -filter "*.txt" -recurse
 which node
 which code
 
-## get-command
+## get-command = gcm
 get-command cmd.exe
+
+---------------------------------------------- Create and Manage file
+# touch 새로운파일 이름
+없는 파일이면 만들고 , 있으면 수정날짜 변경
+
+# cat 파일명
+concatenate and print files
+
+# echo "문자열" 
+문자열 출력
+
+  echo 문자열 > 파일이름
+새로 파일을 만들고 문자열을 내용에 넣어준다.
+파일이 있으면 overriding
+
+  echo 문자열 >> 파일이름
+  파일에 문자열 추가
+
+## new-item 파일명
+## cat 파일명
+## echo 문자열
+   echo 문자열 > 파일명
+   echo 문자열 >> 파일명
+
+-----------------------------------------------------------
+
+# mkdir 디렉토리명
+디렉토리 생성
+mkdir -p dir/subdir/subsubdir
+한번에 서브서브디렉토리 생성 mkdir -p
+
+## mkdir
+mkdir dir/subdir/subsubdir
+
+--------------------------------------------------------------------
+
+# cp 파일명 경로명
+copy, 복사
+
+# mv 파일명 경로명
+move, 이동
+
+# cp mv 둘다 파일명 파일명 하면 원하는대상 파일로 복사, 이동됨
+cp 파일명 파일명
+mv 파일명 파일명
+
+# rm 파일명
+remove 삭제 제거
+
+rm 디렉토리명 에러가 난다.
+rm -r 디렉토리명 해야 에러가 안나고 삭제가 됨.
+-r recurse 로 재귀... 현재 및 하위 디렉토리 전부
+
+## cp 
+aliases : copy-item
+mv
+rm 파일명
+rm 디렉토리명 ---> 제거된다.
+
+--------------------------------------------------------------------
+
+# grep
+Global regular expression print
+
+grep "텍스트" 파일명
+
+grep "world" *.txt
+모든 파일에서 텍스트 검색 가능함
+
+
+grep -n "world" *.txt
+-n 옵션
+몇번째 줄에 있나도 확인 가능함
+....txt: 2 : goodbye world
+
+grep -ni "world" *.txt
+-i 대소문자 상관 없이 검색, insensitive
+
+grep -nir "world" *.txt
+-r recurse 현재부터 하위폴더 전부 검색
+
+## Select-string
+
+
+
+
+
+
 
 
 
