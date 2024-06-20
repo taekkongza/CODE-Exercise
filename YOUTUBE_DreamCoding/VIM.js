@@ -136,6 +136,7 @@ setting : vim use system clipboard : check
  a append 커서 뒤 입력
  I 문장 시작 입력 
  A 문장 끝 입력
+ 
 
 
 
@@ -221,13 +222,6 @@ v
 vaw
 
 ctrl+v 블럭단위로 선택
-
-
-
-
-
-
-
 
 
 */

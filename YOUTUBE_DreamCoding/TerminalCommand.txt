@@ -26,7 +26,8 @@ Bash
 zsh
 fish
 
-# Windows
+
+## Windows
 Powershell - object 개념, 다른 she ll과 다르다. -- Unix 공용가능하게 aliases제공 
 cmd
 
@@ -211,15 +212,30 @@ select-string *, */* -pattern "world" -CaseSensitive
 
 
 -------------------------------- Work with environment variables
- 내 컴퓨터에서 특정 키워드가 명령을 실행하거나 경로를 저장할 수 있도록 만든다.
+환경변수
+특정 키워드가 명령을 실행하거나 경로를 저장할 수 있도록 만든다.
 
+환경변수
 export MY_DIR = "dir1"
 대문자 언더스코어 사용 약속
-
+수
 env
 모든 환경 변수 확인
 
+환경 변수 사용할때 $환경변수
+cd $MY_DIR
+     $환경변수
 
+환경변수 제거
+unset MY_DIR
+env
+
+## $env:MY_DIR = "dir1"
+ls env:
+모든 환경 변수 출력
+
+$env:MY_DIR = ""
+환경 변수 제거
 
 
 
