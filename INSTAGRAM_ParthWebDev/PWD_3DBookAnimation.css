@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+/* 구글폰트에서 Poppins 폰트 가져옴 */
 
 *,
 *::before,
@@ -25,7 +26,25 @@ body {
   background-color: #effffe;
   box-shadow: 1px 1px 12px #000;
   transform: preserve-3d;
-  perspective: 2000px;
+  /* 
+  정확한 구문은 tranform-style: preserve-3d;
+  부모요소에 적용하여 자식 요소들의 3D 변환을 유지.
+  기존적으로 자식 요소들의 3D 변환은 부모 요소에 의해 평면으로 축소될 수 있습니다.
+  'preserve-3d' 를 사용하면 자식 요소의 변환이 평면으로 축소되지 않고 3D 공간에서 그대로 유지 됩니다.
+  */
+  perspective: 20000px;
+  /* 
+  'perspective' 속성운 원근법을 설정합니다. 이 속성은 3D 공간에서의 깊이감을 표현하는데 사용됩니다.
+  원근법은 가까운 객체는 더 크게, 먼 객체는 더 작게 보이도록 합니다.
+
+  perspective 이 속성은 요소가 3D 공간에서 어떻게 보이는지 설정
+  값: 거리값으로 , 보통 픽셀 단위로 설정.
+  perspective: 2000px;    
+  3D 뷰포트 깊이를 2000픽셀로 설정
+  용도 : 부모 요소에 적용하여 자식 요소들의 3D 변환에 영향을 미칩니다.
+  값이 작을수록 원근감이 더 강하게 적용됩니다.
+  2000픽셀은 비교적 부드러운 원근감을 제공
+  */
   display: flex;  
   align-items: center;
   justify-content: center;
@@ -41,6 +60,17 @@ body {
   background-image: url(https://raw.githubusercontent.com/parthwebdev/UI-Components/af1284e0fd9800c7cc5e3b69c5559ca54fac5a6a/Cards/02/cover.jpg);
   background-size: cover;
   transform-origin: 0;
+  /* 
+  transfor-origin  변환의 기준점
+  CSS 요소의 변환 ( rotate, scale, skew 등 )이 적용되는 기준점을 설정
+  기본적으로 요소의 중심이 변환의 기준점
+  --> transform-origin을 사용하면 이를 변경할 수 있다.
+
+  transform-origin: 0;
+  축약형으로 쓰인 것으로 d
+
+  */
+
   box-shadow: 1px 1px 12px #000;
   border-radius: 10px;
   display: flex;
