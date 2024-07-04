@@ -49,15 +49,57 @@ body
 
 .cube div span 
 {
-  position: absolute;
+  position: absolute;  
+  /* 요소를 절대 위치료 지정하여 부모요소인 div내의 위치를 설정*/
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(#151515,#00ec00);
   transform: rotateY(calc(90deg*var(--i))) translateZ(150px);
-
+  /* 
+  rotateY(calc(90deg*var(--i)))
+  Y축을 기준으로 --i 변수값을 90도로 곱한 각도로 회전시킵니다.
+  translateZ(150px)
+  Z축으로 150px 이동시켜 3D 공간에서 면이 큐브의 중심에서 일정거리 만큼 떨어지도록 합니다.    
+  */
 }
+
+/* 
+calc( expression )
+calc() 함수는 CSS에서 수학적 계산을 수행할 수 있게 해주는 함수 입니다.
+픽셀, 퍼센트, em 등의 단위를 혼합하여 계산할 수 있습니다.
+이를 통해 보다 유연하고 반응형 디자인을 쉽게 구현할 수 있습니다.
+
+calc() ~~> ( + , - , * , / )
+
+.element {
+  width: calc(100% - 50px);
+}
+
+.element {
+  font-size: calc(1em + 2vw);
+}
+
+.loader span {
+  animation-delay: calc(0.15s * var(--i));
+}
+----------------------------
+
+calc( ) 함수 사용시 주의 사항
+- calc( ) 사용할 때 연산자와 피연산자 사이에 공백이 필요합니다.
+예를 들어, calc(100% - 50px)는 올바른 구문이지만, calc(100%-50px)는 올바르지 않습니다.
+
+- 단위가 없는 값은 사용할 수 없습니다.
+ 예를 들어, calc(50px + 2em)은 허용되지만, calc(50px + 2)와 같이 단위가 없는 값은 사용할 수 없습니다.
+*/
+
+
+
+
+
+
+
 
 .top
 {
@@ -80,7 +122,9 @@ body
   height: 300px;
   background: #0f0;
   transform: translateZ(-380px);
+  /* 상자 바닥 더 밑으로 이동 */
   filter: blur(20px);
+  /* 바닥의 그림자로 blur */
   box-shadow: 0 0 120px rgba(0, 255, 0, 0.2),
   0 0 200px rgba(0, 255, 0, 0.4),
   0 0 300px rgba(0, 255, 0, 0.6),
