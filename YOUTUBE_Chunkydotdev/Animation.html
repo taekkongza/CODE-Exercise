@@ -1,0 +1,32 @@
+<!-- 
+Intersection Observer API 와 CSS를 사용한 스크롤 애니메이션
+
+intersection observer API 를 사용하면 요소가 뷰포트에 들어왔을때
+CSS 클래스를 추가하여 애니메이션을 트리거할 수 있습니다.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <link rel="stylesheet" href="./Animation.css">
+  <script defer src="./Animation.js"></script>
+</head>
+<body>
+  <div class="box">Content 1</div>
+  <div class="box">Content 2</div>
+  <div class="box">Content 3</div> 
+  <!-- .box 요소들이 뷰포트에 들어올때 visible클래스를 추가하여 애니메이션이 실행된다. -->
+  
+  <!-- 더 복잡한 스크롤 애니메이션 -->
+  <div class="scroll-container">
+    <div class="scroll-content">Scroll down to see the animation</div>
+  </div>
+
+</body>
+</html>
+
+

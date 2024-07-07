@@ -1,0 +1,122 @@
+/* 
+1. Animation
+CSS animation을 사용하면 요소 스타일을 단계적으로 변경할 수 있습니다.
+animation을 만들려면 @keyframes 규칙과 함께 사용됩니다.
+
+➜ animation-name : 애니메이션 이름을 지정, 이름은 @keyframes 규칙과 일치해야 합니다.
+➜ animation-duration : 한 사이클 완료하는데 걸리는 시간
+➜ animation-timing-function : 애니메이션 속도 곡선을 지정 
+  예> ease , linear , ease-in, ease-out, ease-in-out, cubic-bezier 등등
+➜ animation-delay : 시작전 지연시간
+➜ animation-iteration-count : 몇번 반복할지 지정 
+  예> infinite는 무한 반복
+➜ animation-direction : 방향을 지정
+  예> normal, reverse, alternate , alternate-reverse 
+➜ animation-fill-mode : 애니메이션이 끝난 후 스타일을 유지할지 여부 결정
+  예> none, forwards, backwards, both
+➜ animation-play-state : 애니메이션을 실행하거나 일지 중지 
+  예> running, paused
+
+
+2. Transition
+요소의 스타일 변경이 일정 시간 동안 부드럽게 전환되도록 한다.
+주로 이벤트에 의해 스타일이 변경될때 사용됩니다.
+
+➜ transition-property : 전환될 속성을 지정
+  예> all, width, height, background-color등등
+➜ transtion-duration : 전환 완료 걸리는 시간
+➜ transition-timing-function : 전환속도 곡선
+➜ transition-delay : 전환 시작전 지연시간
+
+3. Transform
+CSS 변환을 사용하면 요소를 이동 , 회전, 크기 조정 또한
+기울일 수 있습니다.
+
+➜ translateY(X);
+➜ translateY(Y);
+➜ rotate(deg); 
+➜ scale(sx, sy); 요소의 크기 조정
+➜ skew(ax, ay); 요소를 기울입니다
+➜ matrix(a, b, c, d, e, f) ; 2D 변환 행열을 사용하여 변환합니다.
+
+
+4. Keyframes
+@keyframes 규칙을 사용하면 애니메이션 중 
+스타일을 단계별로 지정할 수 있습니다.
+각 키프레임은 특정 시검에서의 스타일을 정의합니다.
+
+*/
+
+/* 
+animation
+요소의 스타일을 반복적이고 복잡하게 변화시키는데 사용
+@keyframes와 함께 사용
+반복 횟수 (animatio-iteration-count) 와 같이 좀더 다양한 제어 옵션을 제공합니다.
+
+transition
+요소의 스타일 변화를 한번에 부드럽게 처리
+상태변화(예: hover, focus) 에 의해 트리거됩니다.
+단일 상태 변화에 대해 간단한 전환을 제공합니다.
+
+
+*/
+
+/* 
+CSS Scroll animation
+페이지를 스트롤할때 요소들이 특정 방식으로 애니메이션되는 효과
+
+기본개념
+scroll animation을 구현하기 위해 CSS와 JS를 함께 사용하는 경우가 많습니다.
+CSS 만으로는 제한적일 수 있기 때문에, JS 사용하여 스크롤 위치를 감지하고,
+해당 위치에 따라 CSS클래스나 스타일을 적용하는 방식이 일반적입니다.
+
+CSS만으로 구현하는 간단한 스크롤 애니메이션
+CSS 'scroll-behavior' 속성을 사용하여 부드러운 스크롤을 구현할 수 있습니다.
+html {
+    scroll-behavior: smooth;
+}
+
+
+*/
+
+
+
+.box
+{
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: translateY(40px);
+}
+
+.box.visible
+{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------- */
+
+.scroll-container
+{
+  height: 2000px;
+}
+
+.scroll-content
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-out, tranform 0.5s ease-out;
+}
+
+.scroll-content.visible 
+{
+  opacity: 1;
+  transform: tranlate(-50%, -50%) scale(1.1);
+}
+
+
+
+

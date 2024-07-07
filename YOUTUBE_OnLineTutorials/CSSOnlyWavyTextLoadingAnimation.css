@@ -22,6 +22,10 @@ body
   position: relative;
   cursor: default;
   -webkit-box-reflect: below -30px linear-gradient(transparent, #0005);
+  /* 
+  webkit-box-reflect
+  요소 아래에 반사 효과를 적용
+  */
 }
 
 .loader span
@@ -31,6 +35,9 @@ body
   font-size: 3em;
   color: transparent;
   -webkit-text-stroke: 1px #fff9;
+  /*
+  -webkit-text-stroke 텍스트에 흰색 윤곽선을 추가
+  */
   text-transform: uppercase;
   font-weight: 800;
   animation: animate 2s ease-in-out infinite;
