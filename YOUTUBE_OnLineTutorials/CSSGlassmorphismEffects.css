@@ -46,6 +46,7 @@ section::before
   text-align: center;
   z-index: 10;
   margin: 20px 20px 60px;
+  transition: 0.5s;
 }
 
 .container .card .box
@@ -126,7 +127,7 @@ section::before
 {
   transition-delay: 0s, 0.5s, 0.5s, 0s;
   bottom: -70px;
-  z-index: 12;
+  z-index: 11;
   transform: translateX(-50%) translateY(-50px);
   padding: 10px 20px 10px;
 }
