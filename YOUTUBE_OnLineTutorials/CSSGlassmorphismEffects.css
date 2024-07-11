@@ -23,7 +23,7 @@ section::before
 {
   content: '';
   position: absolute;
-  top: 45%;ㅗ
+  top: 45%;
   left: 0;
   width: 100%;
   height: 50px;
