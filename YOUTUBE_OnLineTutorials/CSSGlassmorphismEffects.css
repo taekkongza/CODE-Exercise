@@ -37,6 +37,8 @@ section::before
   flex-wrap: wrap;
   justify-content: space-around;
 }
+/* space-around는 아이템들 사이에 동일한 간격을 주고, 처음과 끝에도 절반의 간격을 줍니다.  */
+
 
 .container .card
 {
@@ -46,6 +48,7 @@ section::before
   text-align: center;
   z-index: 10;
   margin: 20px 20px 60px;
+  /* 20 20 60 20 */
   transition: 0.5s;
 }
 
@@ -62,6 +65,22 @@ section::before
   background: rgba(255,255,255,0.05);
   box-shadow: 0 15px 35px rgba(0,0,0,0.5);
   backdrop-filter: blur(15px);
+  /* 
+  backdrop-filter 속성은 요소의 뒤에 있는 배경을 필터링 하는데 사용됩니다.
+  즉 요소의 내용 자체는 변화하지 않지만 , 요소의 뒤쪽 배경에 필터효과가 적용됩니다.
+
+  backdrop-filter에 사용할 수 있는 함수
+  1. blur( ) ... 배경을 흐리게 ... backdrop-filter: blur(10px);
+  2. brightness( ) ... 배경의 밝기 조정 ... backdrop-filter: brightness(0.5); ... 50%밝기
+  3. contrast( ) ... 배경의 대비 조정 ... backdrop-filter: contrast(200%); 
+  4. grayscale( ) ... 배경을 회색조로 변환 ... backdrop-filter: grayscale(100%); ... 100% 
+  5. hue-rotate( ) ... 배경의 색상을 회전 ... backdrop-fileter: hue-rotate(90deg);
+  6. invert( )... 배경 색상 반전 ... backdrop-filter: invert(100%);
+  7. opacity( ) ... 베경 불투명도 조절 ... backdrop-filter: opacity(50%) ... 50%불투명도
+  8. saturate( ) ... 배경 채도 ... saturate(200%)
+  9. sepia( ) ... 배경 세피아톤으로 변환 ... sepia(100%)
+
+  */
   border: 1px solid rgba(255,255,255,0.1);
   z-index: 10;
   border-radius: 10px;
@@ -120,7 +139,11 @@ section::before
   pointer-events: none;
   color: #fff;
   transition: bottom 0.5s, z-index 0s, transform 0.5s, padding 0.5s;
+  
   transition-delay: 0.5s, 0.5s, 0s, 0.5s;
+  /* bottom...0.5s     z-index...0.5s  tramsfom...0s padding...0.5s   
+  'bottm 속성 변화가 0.5초 대기한후 전환
+    /*
 }
 
 .card:hover .text
