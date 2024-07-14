@@ -37,7 +37,7 @@ section::before
   flex-wrap: wrap;
   justify-content: space-around;
 }
-/* space-around는 아이템들 사이에 동일한 간격을 주고, 처음과 끝에도 절반의 간격을 줍니다.  */
+/* space-around는 아이템들 사이에 동일한 간격을 주고, 처음과 끝에도 절반의 간격을 줍니다. -- 즉 각각 요소 주변에 같은 마진을 두어 떨어뜨린다. */
 
 
 .container .card
@@ -143,7 +143,9 @@ section::before
   transition-delay: 0.5s, 0.5s, 0s, 0.5s;
   /* bottom...0.5s     z-index...0.5s  tramsfom...0s padding...0.5s   
   'bottm 속성 변화가 0.5초 대기한후 전환
-    /*
+   
+  
+  */
 }
 
 .card:hover .text
@@ -192,7 +194,7 @@ svg circle:nth-child(2)
 }
 
 .card:nth-child(1) svg circle:nth-child(2)
-{
+{ㅏ
   stroke-dashoffset: calc(440px*0.1);
 }
 .card:nth-child(2) svg circle:nth-child(2)
@@ -204,6 +206,37 @@ svg circle:nth-child(2)
   stroke-dashoffset: calc(440px*0.35);
 }
 
+/* 
+SVG scalable vector graphics에서 사용되는 속성
 
+stroke
+stroke-dash
+stroke-dasharray
+stroke-dashoffset
+
+stroke ... 도형의 외곽선 , 선의 색상  ... stroke="black"
+stroke-width ... 외곽선의 두께 ... stroke-width="3"
+stroke-linecap ... 선의 끝부분 모양 ... butt(기본) round square ... stroke-linecap="round"
+stroke-linejoin ... 선이 만나는 지점의 모양 ... miter(기본) round bevel ... stroke-linejoin="round"
+stroke-dasharray ... 선을 대시와 간격의 패턴으로 설명 ... stroke-dasharray="5,10" 5픽셀 대시, 10픽셀 간격
+stroke-dashoffset ... 대시 패턴의 시작점을 설정 ... stroke-dashoffset="5"
+
+
+# stroke-dasharray
+선의 길이와 간격을 조정하여 점선이나 패턴을 만듭니다.
+stroke-dasharray: <num1> <num2> ... <numB>;
+각 숫자는 선의 대시 길이와 간격 길이를 나타냅니다.
+숫자가 하나만 있는 경우 , 그 숫자 만큼 길이로 선과 간격을 반복한다.
+
+
+# stroke-dashoffset
+대시 패턴이 어디에서 시작할지를 결정
+대시 팬턴의 시작점을 이동시켜, 선의 다른 부분에서 패턴이 시작되도록 할 수 있습니다.
+
+stroke-dashoffset: <length>;
+length값은 대시 패턴이 시작할 위치를 설정합니다.
+양수값은 대시 패턴을 앞으로 이동 시키고, 음수값은 대시 패턴을 뒤로 이동시킵니다.
+
+*/
 
 
