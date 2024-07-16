@@ -46,10 +46,35 @@ body
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out; 
 }
+/* 
+clip-path : CSS속성으로 요소읠 일부분을 특정한 모양으로 잘라내어 보여줄때 사용
+요소의 일부를 숨기고 나머지 부분만 보여주는 역할
+
+clip-path 주요 사용법
+- circle( ) 원형
+- ellipse( ) 타원형
+- inset( ) 요소의 안쪽 경게로부터 사각형의 모서리 까지의 거리를 지정
+- polygon( ) 다각형
+- path( ) SVG경로 데이터를 사용하여 클리핑 결로를 정의
+
+clip-path: path('M10 10 H 90 V 90 H 10 L 10 10');
+M move to (10, 10) 시작점
+H horizontal line to (90, 10) 
+V Vertical line to (90, 90)
+H 10 (10, 90)
+L line to (10, 10) 선을 그리며 이동하여 경로를 마침
+
+clip-path: circle(150px at 80% 20%)
+원의 중심이 요소의 80% 가로위치와 20% 세로위치에 반지름이 150px 의 원을 정의
+
+*/
+
 
 .container .card:hover:before
 {
   clip-path: circle(300px at 80% -20%);
+  /* 원의 중심이 요소 가로 80% 세로 -20% 로 이동, 반지름이 300px로 확장*/
+
 }
 
 .container .card:after
@@ -211,7 +236,7 @@ body
   transition: 0.5s;
 }
 
-.container .card .contentBx a
+.container .card:hover .contentBx a
 {
   opacity: 1;
   transform: translateY(0px);
